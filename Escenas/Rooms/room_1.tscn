@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://of02je1aet4u" path="res://Escenas/Rooms/room_1.gd" id="1_le4pq"]
 [ext_resource type="PackedScene" uid="uid://d0rltv5tqtcjq" path="res://Escenas/personaje/Player.tscn" id="2_k25l6"]
 [ext_resource type="PackedScene" uid="uid://q8ulliwu0hgl" path="res://Escenas/clutterspawner.tscn" id="4_keqd2"]
+[ext_resource type="PackedScene" uid="uid://dwnagrn76rpml" path="res://Escenas/doorspawner/doorspawner.tscn" id="5_s7fwh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k25l6"]
 texture = ExtResource("1_ibahi")
@@ -47,3 +48,6 @@ position = Vector2(226, 270)
 
 [node name="Clutterspawner3" parent="." unique_id=1111779740 instance=ExtResource("4_keqd2")]
 position = Vector2(270, 51)
+
+[node name="Doorspawner" parent="." unique_id=1107583794 instance=ExtResource("5_s7fwh")]
+position = Vector2(296, 293)

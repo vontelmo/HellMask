@@ -5,17 +5,18 @@ var _velocidad = 300
 
 
 func _physics_process(delta: float) -> void:
+	velocity = Vector2.ZERO
 	# movimiento 
 	if Input.is_action_pressed("derecha"):
-		velocity.x = _velocidad
-	elif Input.is_action_pressed("izquierda"):
-		velocity.x = -_velocidad
-	elif Input.is_action_pressed("abajo"):
-		velocity.y = _velocidad
-	elif Input.is_action_pressed("arriba"):
-		velocity.y = -_velocidad
-	else:
-		velocity.x = 0
-		velocity.y = 0
+		velocity.x += 1
+	if Input.is_action_pressed("izquierda"):
+		velocity.x -= 1
+	if Input.is_action_pressed("abajo"):
+		velocity.y += 1
+	if Input.is_action_pressed("arriba"):
+		velocity.y -= 1
+	
+	if velocity != Vector2.ZERO:
+		velocity = velocity.normalized() * _velocidad
 		
 	move_and_slide()
