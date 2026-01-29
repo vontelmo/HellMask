@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 var _velocidad = 300
-
+@export var _health : float
 
 func _physics_process(delta: float) -> void:
 	# movimiento 

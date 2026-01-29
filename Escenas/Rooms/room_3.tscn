@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://du05xapbso86o" path="res://Escenas/tileset_mazmorra.png" id="1_835mh"]
 [ext_resource type="PackedScene" uid="uid://d0rltv5tqtcjq" path="res://Escenas/personaje/Player.tscn" id="2_sxeva"]
 [ext_resource type="PackedScene" uid="uid://q8ulliwu0hgl" path="res://Escenas/clutter_spawner/clutterspawner.tscn" id="3_iq22j"]
-[ext_resource type="PackedScene" uid="uid://bhvhnfrmr4tta" path="res://Escenas/enemigos/enemigo.tscn" id="4_sxeva"]
+[ext_resource type="PackedScene" uid="uid://kbxhaqc2ofqt" path="res://Escenas/enemy_spawner/enemy_spawner.tscn" id="4_sxeva"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k25l6"]
 texture = ExtResource("1_835mh")
@@ -46,5 +46,6 @@ position = Vector2(63, 339)
 [node name="Player" parent="." unique_id=1731200291 instance=ExtResource("2_sxeva")]
 position = Vector2(405, 327)
 
-[node name="Enemigo" parent="." unique_id=1897216851 instance=ExtResource("4_sxeva")]
-position = Vector2(797, 478)
+[node name="EnemySpawner" parent="." unique_id=1444006752 instance=ExtResource("4_sxeva")]
+position = Vector2(572, 298)
+spawn_interval = 0.2
