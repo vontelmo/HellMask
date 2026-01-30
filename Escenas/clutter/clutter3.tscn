@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8fig"]
 size = Vector2(50, 98)
 
-[node name="Clutter1" type="StaticBody2D" unique_id=803634948]
+[node name="Clutter1" type="StaticBody2D" unique_id=803634948 groups=["obstacles"]]
 collision_mask = 65535
 physics_material_override = SubResource("PhysicsMaterial_b8fig")
 
