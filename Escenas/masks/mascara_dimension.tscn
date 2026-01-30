@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://lxjyffsluu7d"]
+
+[ext_resource type="Script" uid="uid://dsnapglwtxqin" path="res://Escenas/masks/mascara_dimension.gd" id="1_6rxjw"]
+
+[node name="MascaraDimension" type="Node2D" unique_id=19938945]
+script = ExtResource("1_6rxjw")

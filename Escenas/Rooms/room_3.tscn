@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://du05xapbso86o" path="res://Escenas/tileset_mazmorra.png" id="1_835mh"]
 [ext_resource type="PackedScene" uid="uid://d0rltv5tqtcjq" path="res://Escenas/personaje/Player.tscn" id="2_sxeva"]
-[ext_resource type="PackedScene" uid="uid://q8ulliwu0hgl" path="res://Escenas/clutter_spawner/clutterspawner.tscn" id="3_iq22j"]
+[ext_resource type="PackedScene" uid="uid://q8ulliwu0hgl" path="res://Escenas/clutterspawner.tscn" id="3_iq22j"]
 [ext_resource type="PackedScene" uid="uid://kbxhaqc2ofqt" path="res://Escenas/enemy_spawner/enemy_spawner.tscn" id="4_sxeva"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k25l6"]
