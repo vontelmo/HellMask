@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+#class_name Enemigo
 
 var _velocidad = 300
 @export var _health : float

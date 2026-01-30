@@ -1,17 +1,38 @@
-class_name Enemigo
 extends CharacterBody2D
 
-var player: CharacterBody2D
-@export var speed : int
+class_name Enemigo
+
+#var player: CharacterBody2D
+#@export var speed : int
 @export var health : int
+@export var weapon : PackedScene
+@export var damage : float
+@export var attack_speed : float
+@export var range : float
+
+
+@export var speed := 120
+@onready var agent := $NavigationAgent2D
+@onready var player := get_tree().get_first_node_in_group("player")
+
+var last_target_pos: Vector2
 
 func _ready():
-	player = get_tree().get_first_node_in_group("player")
+	agent.radius = 20.0  # ejemplo
+	
+	agent.target_position = player.global_position
+	agent.avoidance_enabled = true
+	agent.max_neighbors = 10
+	agent.time_horizon = 1.0
+
 	
 func _physics_process(delta):
-	if not player:
-		return
+	if player.global_position.distance_to(last_target_pos) > 16:
+		agent.target_position = player.global_position
+		last_target_pos = player.global_position
+		
+	var next_pos = agent.get_next_path_position()
+	var direction = (next_pos - global_position).normalized()
 
-	var dir = (player.global_position - global_position).normalized()
-	velocity = dir * speed
+	velocity = direction * speed
 	move_and_slide()
