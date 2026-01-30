@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://lxjyffsluu7d" path="res://Escenas/masks/mascara_dimension.tscn" id="2_xa6pu"]
 [ext_resource type="PackedScene" uid="uid://bc1bbf0d44bgr" path="res://Escenas/masks/mascara_dash.tscn" id="3_n5vl0"]
 [ext_resource type="PackedScene" uid="uid://cjb2urphik0ci" path="res://Escenas/masks/mascara_fuerza.tscn" id="4_6a8ci"]
+[ext_resource type="PackedScene" uid="uid://bpacn2l4l2j8a" path="res://Escenas/weapon_socket/weapon_socket.tscn" id="6_6a8ci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa6pu"]
 size = Vector2(46, 48)
@@ -31,5 +32,7 @@ shape = SubResource("RectangleShape2D_pklf0")
 
 [node name="Timer" type="Timer" parent="." unique_id=580111464]
 one_shot = true
+
+[node name="WeaponSocket" parent="." unique_id=1318924881 instance=ExtResource("6_6a8ci")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
