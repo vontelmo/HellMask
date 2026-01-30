@@ -1,10 +1,11 @@
 [gd_scene format=4 uid="uid://sbj46tva1bya"]
 
 [ext_resource type="Texture2D" uid="uid://du05xapbso86o" path="res://Escenas/tileset_mazmorra.png" id="1_ibahi"]
-[ext_resource type="Script" uid="uid://of02je1aet4u" path="res://Escenas/Rooms/room_1.gd" id="1_le4pq"]
+[ext_resource type="Script" uid="uid://c1sfsco0s3tn3" path="res://Escenas/Rooms/room_1.gd" id="1_le4pq"]
 [ext_resource type="PackedScene" uid="uid://d0rltv5tqtcjq" path="res://Escenas/personaje/Player.tscn" id="2_k25l6"]
 [ext_resource type="PackedScene" uid="uid://q8ulliwu0hgl" path="res://Escenas/clutterspawner.tscn" id="4_keqd2"]
-[ext_resource type="PackedScene" uid="uid://dwnagrn76rpml" path="res://Escenas/doorspawner/doorspawner.tscn" id="5_s7fwh"]
+[ext_resource type="PackedScene" uid="uid://cavsm8h3xvqf7" path="res://Escenas/door/door.tscn" id="5_s7fwh"]
+[ext_resource type="PackedScene" uid="uid://dn4q7liibtjyu" path="res://Escenas/Rooms/room_2.tscn" id="6_1gb4s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k25l6"]
 texture = ExtResource("1_ibahi")
@@ -38,7 +39,6 @@ tile_set = SubResource("TileSet_le4pq")
 
 [node name="Player" parent="." unique_id=1731200291 instance=ExtResource("2_k25l6")]
 position = Vector2(216, 146)
-scale = Vector2(0.5, 0.5)
 
 [node name="Clutterspawner" parent="." unique_id=1610097764 instance=ExtResource("4_keqd2")]
 position = Vector2(58, 99)
@@ -49,5 +49,11 @@ position = Vector2(226, 270)
 [node name="Clutterspawner3" parent="." unique_id=1111779740 instance=ExtResource("4_keqd2")]
 position = Vector2(270, 51)
 
-[node name="Doorspawner" parent="." unique_id=1107583794 instance=ExtResource("5_s7fwh")]
-position = Vector2(296, 293)
+[node name="Node" type="Node" parent="." unique_id=2005759125]
+
+[node name="Door" parent="Node" unique_id=2130255880 instance=ExtResource("5_s7fwh")]
+position = Vector2(311, 304)
+destination_level_tag = "room_3"
+destination_door_tag = "W"
+spaw_direction = "left"
+rooms = Array[PackedScene]([ExtResource("6_1gb4s")])

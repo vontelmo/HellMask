@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
+class_name Player
 
 var _velocidad = 300
-
+@export var _health : float
 
 func _physics_process(delta: float) -> void:
 	velocity = Vector2.ZERO
