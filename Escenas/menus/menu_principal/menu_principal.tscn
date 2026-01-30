@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://kqx7rhtgn6gu"]
+
+[ext_resource type="Script" uid="uid://dk5k8dymkmyh4" path="res://Escenas/menus/menu_principal/jugar.gd" id="1_ctibf"]
+[ext_resource type="PackedScene" uid="uid://dvhpcrc7hjyj2" path="res://Escenas/manager/god_manager.tscn" id="2_wivhk"]
+[ext_resource type="Script" uid="uid://c8ve3qxjyi7hr" path="res://Escenas/menus/menu_principal/salir.gd" id="3_j018b"]
+
+[node name="MenuPrincipal" type="Control" unique_id=1730802289]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -11.0
+offset_right = -8.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Jugar" type="Button" parent="." unique_id=1532722925]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 245.0
+offset_right = 665.0
+offset_bottom = 285.0
+text = "Jugar"
+script = ExtResource("1_ctibf")
+manager = ExtResource("2_wivhk")
+
+[node name="Salir" type="Button" parent="." unique_id=296129701]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 297.0
+offset_right = 665.0
+offset_bottom = 335.0
+text = "Salir"
+script = ExtResource("3_j018b")
