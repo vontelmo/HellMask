@@ -8,6 +8,7 @@
 size = Vector2(100, 34.5)
 
 [node name="Clutter1" type="StaticBody2D" unique_id=803634948]
+collision_mask = 65535
 physics_material_override = SubResource("PhysicsMaterial_b8fig")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1309697940]

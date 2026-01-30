@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dvhpcrc7hjyj2"]
+
+[ext_resource type="Script" uid="uid://cq7h1tpjvxyl3" path="res://Escenas/manager/god_manager.gd" id="1_cvaxy"]
+[ext_resource type="PackedScene" uid="uid://bicideaacoune" path="res://Escenas/room_spawner/room_spawner.tscn" id="2_tbl0k"]
+
+[node name="GodManager" type="Node2D" unique_id=343103615]
+script = ExtResource("1_cvaxy")
+room_spawner = ExtResource("2_tbl0k")
