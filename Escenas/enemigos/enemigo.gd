@@ -10,6 +10,8 @@ class_name Enemigo
 @export var attack_speed : float
 @export var range : float
 
+var is_alive
+
 
 @export var speed := 120
 @onready var agent := $NavigationAgent2D
@@ -25,6 +27,12 @@ func _ready():
 	agent.max_neighbors = 10
 	agent.time_horizon = 1.0
 
+func _process(delta: float) -> void:
+	health = health - 1
+	if health == 0:
+		is_alive = false
+		_death()
+
 	
 func _physics_process(delta):
 	if player.global_position.distance_to(last_target_pos) > 16:
@@ -36,3 +44,9 @@ func _physics_process(delta):
 
 	velocity = direction * speed
 	move_and_slide()
+	
+func _death():
+	if not is_alive:
+		if is_inside_tree():
+			print("estoy morido")
+			get_parent().remove_child(self)
