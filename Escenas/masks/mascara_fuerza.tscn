@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cjb2urphik0ci"]
+
+[ext_resource type="Script" uid="uid://cqaprc53ffypj" path="res://Escenas/masks/mascara_fuerza.gd" id="1_cmata"]
+
+[node name="MascaraFuerza" type="Node2D" unique_id=19938945]
+script = ExtResource("1_cmata")
