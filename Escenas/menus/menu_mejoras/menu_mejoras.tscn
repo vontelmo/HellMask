@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dqag0u02hysav"]
 
 [ext_resource type="Script" uid="uid://das0e4qhgmjn2" path="res://Escenas/menus/menu_mejoras/agregar_mejoras.gd" id="1_fg7hs"]
-[ext_resource type="PackedScene" uid="uid://k88xqjuei6r0" path="res://Escenas/mejoras/mejora.tscn" id="2_xoh6r"]
+[ext_resource type="PackedScene" uid="uid://k88xqjuei6r0" path="res://Escenas/mejoras/mejora/mejora.tscn" id="2_xoh6r"]
+[ext_resource type="PackedScene" uid="uid://dhr7sy8mouu26" path="res://Escenas/mejoras/mejora_escopeta.tscn" id="3_ul0ip"]
 
 [node name="MenuMejoras" type="Control" unique_id=1317070838]
 layout_mode = 3
@@ -43,4 +44,4 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 theme_override_constants/separation = 24
 script = ExtResource("1_fg7hs")
-mejoras = Array[PackedScene]([ExtResource("2_xoh6r")])
+mejoras = Array[PackedScene]([ExtResource("2_xoh6r"), ExtResource("3_ul0ip")])
