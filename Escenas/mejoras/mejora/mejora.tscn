@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://k88xqjuei6r0"]
+
+[ext_resource type="Script" uid="uid://m0ewq2jj45oc" path="res://Escenas/mejoras/mejora/mejora.gd" id="1_dte8w"]
+
+[node name="Mejora" type="Button" unique_id=112387519]
+custom_minimum_size = Vector2(0, 160)
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+script = ExtResource("1_dte8w")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=866077362]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+stretch_mode = 5

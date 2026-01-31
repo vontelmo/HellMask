@@ -17,3 +17,7 @@ texture = ExtResource("1_b8fig")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=753703411]
 shape = SubResource("RectangleShape2D_b8fig")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1057188031 groups=["obstacles"]]
+radius = 90.91
+avoidance_enabled = false
