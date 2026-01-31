@@ -56,12 +56,12 @@ func _take_damage(amount):
 
 func attack():
 	if player == null or weapon == null:
-		print("no hay nadaaaa")
+		#print("no hay nadaaaa")
 		return
 	if player.global_position.distance_to(last_target_pos) > range:
 		var dir = (player.global_position - global_position).normalized()
 		weapon.try_shoot(global_position, dir)
-		print("disparo desde enemigo")
+		#print("disparo desde enemigo")
 
 
 func _death():

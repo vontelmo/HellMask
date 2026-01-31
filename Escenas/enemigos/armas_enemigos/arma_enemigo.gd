@@ -30,4 +30,4 @@ func shoot(from_position: Vector2, direction: Vector2):
 	bullet.damage = damage
 	
 	get_tree().current_scene.add_child(bullet)
-	print("disparop pew pew")
+	#print("disparop pew pew")

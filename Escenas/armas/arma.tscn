@@ -4,3 +4,8 @@
 
 [node name="Arma" type="Node2D" unique_id=1933793559]
 script = ExtResource("1_1ml0p")
+
+[node name="Timer" type="Timer" parent="." unique_id=2013305527]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
