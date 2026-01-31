@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dvhpcrc7hjyj2"]
+
+[ext_resource type="Script" uid="uid://cq7h1tpjvxyl3" path="res://Escenas/manager/god_manager.gd" id="1_cvaxy"]
+[ext_resource type="PackedScene" uid="uid://cc2rdbc87she" path="res://Escenas/Rooms/starterroom/starterroom.tscn" id="2_2l711"]
+[ext_resource type="Script" uid="uid://dqo1t3fnb1k24" path="res://Escenas/manager/controlador_pausa.gd" id="3_2l711"]
+
+[node name="GodManager" type="Node2D" unique_id=343103615]
+script = ExtResource("1_cvaxy")
+starter_room = ExtResource("2_2l711")
+
+[node name="ControladorPausa" type="Node" parent="." unique_id=1478698921]
+process_mode = 3
+script = ExtResource("3_2l711")

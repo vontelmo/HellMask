@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bc1bbf0d44bgr"]
+
+[ext_resource type="Script" uid="uid://4thv1e2uxc7p" path="res://Escenas/masks/mascara_dash.gd" id="1_62lrx"]
+
+[node name="MascaraDash" type="Node2D" unique_id=19938945]
+script = ExtResource("1_62lrx")

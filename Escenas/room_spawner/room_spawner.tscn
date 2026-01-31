@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bicideaacoune"]
+
+[ext_resource type="Script" uid="uid://ug6tusp732ff" path="res://room_spawner.gd" id="1_d3f12"]
+[ext_resource type="PackedScene" uid="uid://sbj46tva1bya" path="res://Escenas/Rooms/room_1.tscn" id="2_pjag2"]
+[ext_resource type="PackedScene" uid="uid://dn4q7liibtjyu" path="res://Escenas/Rooms/room_2.tscn" id="3_mgk3g"]
+[ext_resource type="PackedScene" uid="uid://cfuk0r3ueyadj" path="res://Escenas/Rooms/room_3.tscn" id="4_pjag2"]
+
+[node name="RoomSpawner" type="Node2D" unique_id=1109376645]
+script = ExtResource("1_d3f12")
+rooms = Array[PackedScene]([ExtResource("2_pjag2"), ExtResource("3_mgk3g"), ExtResource("4_pjag2")])

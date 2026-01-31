@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bghd5xcgstvf"]
+
+[ext_resource type="Script" uid="uid://yim2bd0w8hp3" path="res://Escenas/Rooms/marker_informa_cuarto/marker_informa_cuarto.gd" id="1_2odui"]
+
+[node name="MarkerInformaCuarto" type="Marker2D" unique_id=1969299295]
+script = ExtResource("1_2odui")

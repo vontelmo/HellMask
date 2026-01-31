@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://xnne11s1l1xe"]
+
+[ext_resource type="Script" uid="uid://dtwd8uwxbt5sv" path="res://Escenas/Rooms/starterroom/spawnearjugadorindicar.gd" id="1_r8nss"]
+
+[node name="Spawnearjugador" type="Marker2D" unique_id=1695836585]
+script = ExtResource("1_r8nss")
