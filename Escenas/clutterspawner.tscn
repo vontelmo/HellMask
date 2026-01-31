@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://q8ulliwu0hgl"]
+
+[ext_resource type="Script" uid="uid://kpggva70nra0" path="res://Escenas/clutterspawner.gd" id="1_jehlf"]
+[ext_resource type="PackedScene" uid="uid://bde3fi3j0v74i" path="res://Escenas/clutter/clutter1.tscn" id="2_yta1d"]
+[ext_resource type="PackedScene" uid="uid://bcolvf6bec15m" path="res://Escenas/clutter/clutter2.tscn" id="3_5wdgv"]
+[ext_resource type="PackedScene" uid="uid://rkfb5835gsiy" path="res://Escenas/clutter/clutter3.tscn" id="4_eqec4"]
+
+[node name="Clutterspawner" type="Node2D" unique_id=1610097764]
+script = ExtResource("1_jehlf")
+clutterPool = Array[PackedScene]([ExtResource("2_yta1d"), ExtResource("3_5wdgv"), ExtResource("4_eqec4")])
+metadata/_edit_lock_ = true

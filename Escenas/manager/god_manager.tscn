@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dvhpcrc7hjyj2"]
+
+[ext_resource type="Script" uid="uid://cq7h1tpjvxyl3" path="res://Escenas/manager/god_manager.gd" id="1_cvaxy"]
+[ext_resource type="Script" uid="uid://dqo1t3fnb1k24" path="res://Escenas/manager/controlador_pausa.gd" id="3_2l711"]
+[ext_resource type="Script" uid="uid://b7u60pp70yjkk" path="res://Escenas/manager/world_environment.gd" id="3_5ex0s"]
+
+[sub_resource type="Environment" id="Environment_tbl0k"]
+background_mode = 3
+background_color = Color(0.7490196, 0, 0, 1)
+sdfgi_read_sky_light = false
+glow_enabled = true
+
+[node name="GodManager" type="Node2D" unique_id=343103615]
+script = ExtResource("1_cvaxy")
+
+[node name="ControladorPausa" type="Node" parent="." unique_id=1478698921]
+process_mode = 3
+script = ExtResource("3_2l711")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2084211938]
+environment = SubResource("Environment_tbl0k")
+script = ExtResource("3_5ex0s")
+color_a = Color(0.3560397, 0.031547464, 0.08693039, 1)
+color_b = Color(0.43383616, 0.008000654, 0.21883807, 1)

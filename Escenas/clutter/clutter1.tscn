@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bde3fi3j0v74i"]
+
+[ext_resource type="Texture2D" uid="uid://b38ti04etlcrn" path="res://icon.svg" id="1_b8fig"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b8fig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8fig"]
+size = Vector2(50, 49)
+
+[node name="Clutter1" type="StaticBody2D" unique_id=803634948]
+collision_mask = 65535
+physics_material_override = SubResource("PhysicsMaterial_b8fig")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1309697940]
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("1_b8fig")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=753703411]
+shape = SubResource("RectangleShape2D_b8fig")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1057188031 groups=["obstacles"]]
+radius = 90.91
+avoidance_enabled = false
