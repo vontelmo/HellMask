@@ -10,11 +10,11 @@ size = Vector2(22, 47)
 [node name="Espada" unique_id=1933793559 instance=ExtResource("1_8jr0i")]
 script = ExtResource("2_xm03e")
 
-[node name="Area2D" type="Area2D" parent="." index="0" unique_id=1818457506]
-collision_layer = 0
-collision_mask = 2
+[node name="Hurtbox" type="Area2D" parent="." index="0" unique_id=1818457506]
+collision_layer = 16
+collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=1487490366]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" index="0" unique_id=1487490366]
 position = Vector2(0, -24.5)
 shape = SubResource("RectangleShape2D_5d4g6")
 
