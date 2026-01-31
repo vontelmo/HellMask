@@ -2,11 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://du05xapbso86o" path="res://Escenas/tileset_mazmorra.png" id="1_ibahi"]
 [ext_resource type="Script" uid="uid://c1sfsco0s3tn3" path="res://Escenas/Rooms/room_1.gd" id="1_le4pq"]
-[ext_resource type="PackedScene" uid="uid://dlde20tpxi2ef" path="res://Escenas/Rooms/barrera_entrada/barrera_entrada.tscn" id="4_keqd2"]
-[ext_resource type="Script" uid="uid://biwbmyolrr55j" path="res://Escenas/Rooms/navigation_region_2d.gd" id="5_myxqk"]
-[ext_resource type="Script" uid="uid://dc0vxuee2amdg" path="res://Escenas/Rooms/markerreport.gd" id="6_1gb4s"]
-[ext_resource type="PackedScene" uid="uid://bghd5xcgstvf" path="res://Escenas/Rooms/marker_informa_cuarto/marker_informa_cuarto.tscn" id="7_myxqk"]
-[ext_resource type="PackedScene" uid="uid://bde3fi3j0v74i" path="res://Escenas/clutter/clutter1.tscn" id="7_tdlb6"]
+[ext_resource type="PackedScene" uid="uid://d0rltv5tqtcjq" path="res://Escenas/personaje/Player.tscn" id="2_k25l6"]
+[ext_resource type="PackedScene" uid="uid://q8ulliwu0hgl" path="res://Escenas/clutter_spawner/clutterspawner.tscn" id="4_keqd2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mhlau"]
 texture = ExtResource("1_ibahi")
@@ -53,8 +50,8 @@ tile_map_data = PackedByteArray("AAAAAAMAAAACAAMAAAAAAAQAAAACAAMAAAAAAAUAAAACAAM
 enabled = false
 tile_set = SubResource("TileSet_le4pq")
 
-[node name="BarreraEntrada" parent="." unique_id=863463658 instance=ExtResource("4_keqd2")]
-position = Vector2(55, 93)
+[node name="Player" parent="." unique_id=1731200291 instance=ExtResource("2_k25l6")]
+position = Vector2(216, 146)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=767979305 groups=["navmesh"]]
 position = Vector2(-8, 0)
