@@ -1,5 +1,59 @@
 [gd_scene format=3 uid="uid://bfql47tlfj0rg"]
 
 [ext_resource type="PackedScene" uid="uid://bhvhnfrmr4tta" path="res://Escenas/enemigos/enemigo.tscn" id="1_itg0s"]
+[ext_resource type="Texture2D" uid="uid://h53ea43csqtx" path="res://Escenas/sprites/Enemigos/enemigo_rapido.PNG" id="2_jvp02"]
+
+[sub_resource type="Animation" id="Animation_7v8ix"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.9999999, -5.9999995)]
+}
+
+[sub_resource type="Animation" id="Animation_jvp02"]
+resource_name = "tween"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.9999999, -5.9999995), Vector2(2, -15), Vector2(2, -6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7v8ix"]
+_data = {
+&"RESET": SubResource("Animation_7v8ix"),
+&"tween": SubResource("Animation_jvp02")
+}
 
 [node name="Enemigo" unique_id=1897216851 instance=ExtResource("1_itg0s")]
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" parent="." index="0" unique_id=395078675]
+position = Vector2(1.9999999, -5.9999995)
+scale = Vector2(0.1, 0.10148926)
+texture = ExtResource("2_jvp02")
+
+[node name="Sprite2D" parent="ArmaEnemigo" parent_id_path=PackedInt32Array(1566639194) index="0" unique_id=220170080]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5" unique_id=558616616]
+libraries/ = SubResource("AnimationLibrary_7v8ix")
+autoplay = &"tween"
+
+[editable path="ArmaEnemigo"]

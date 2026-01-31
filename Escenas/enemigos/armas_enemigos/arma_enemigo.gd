@@ -26,6 +26,7 @@ func shoot(from_position: Vector2, direction: Vector2):
 	var bullet = projectile_scene.instantiate()
 	bullet.global_position = from_position
 	bullet.direction = direction
+	
 	bullet.speed = projectile_speed
 	bullet.damage = damage
 	

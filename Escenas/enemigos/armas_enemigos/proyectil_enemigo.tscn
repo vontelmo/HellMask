@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bvqysc8cejrcg"]
 
 [ext_resource type="Script" uid="uid://4yx4jv1oko7e" path="res://Escenas/enemigos/armas_enemigos/proyectil_enemigo.gd" id="1_earkv"]
-[ext_resource type="Texture2D" uid="uid://cebmtmo8f303r" path="res://Escenas/enemigos/armas_enemigos/bala.PNG" id="2_xfxpr"]
+[ext_resource type="Texture2D" uid="uid://bvqw0nfvwpmn4" path="res://Escenas/sprites/Enemigos/enemigo_distancia_bala.PNG" id="2_xfxpr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1iiii"]
 
@@ -12,5 +12,6 @@ script = ExtResource("1_earkv")
 shape = SubResource("CircleShape2D_1iiii")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2014179238]
+position = Vector2(-4.9999995, 0)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_xfxpr")

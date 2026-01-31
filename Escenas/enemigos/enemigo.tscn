@@ -13,7 +13,6 @@ height = 104.0
 size = Vector2(240, 240)
 
 [node name="Enemigo" type="CharacterBody2D" unique_id=1897216851 node_paths=PackedStringArray("weapon") groups=["enemies"]]
-scale = Vector2(0.5, 0.5)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_ojia2")
@@ -48,3 +47,4 @@ debug_color = Color(0, 0.6, 0.69803923, 0.43529412)
 debug_enabled = true
 
 [node name="ArmaEnemigo" parent="." unique_id=1566639194 instance=ExtResource("3_0k4c8")]
+position = Vector2(68, 0)
