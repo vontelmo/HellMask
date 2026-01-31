@@ -1,6 +1,6 @@
 extends Node2D 
 
-var starter_room = preload("res://Escenas/Rooms/starterroom/starterroom.tscn")
+@onready var starter_room = preload("res://Escenas/Rooms/starterroom/starterroom.tscn")
 
 func _ready() -> void:
 	_create_room.call_deferred()

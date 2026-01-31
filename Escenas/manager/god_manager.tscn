@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cq7h1tpjvxyl3" path="res://Escenas/manager/god_manager.gd" id="1_cvaxy"]
 [ext_resource type="Script" uid="uid://dqo1t3fnb1k24" path="res://Escenas/manager/controlador_pausa.gd" id="3_2l711"]
-[ext_resource type="Script" uid="uid://b7u60pp70yjkk" path="res://Escenas/manager/world_environment.gd" id="3_5ex0s"]
+[ext_resource type="Script" path="res://Escenas/manager/world_environment.gd" id="3_5ex0s"]
 
 [sub_resource type="Environment" id="Environment_tbl0k"]
 background_mode = 3
