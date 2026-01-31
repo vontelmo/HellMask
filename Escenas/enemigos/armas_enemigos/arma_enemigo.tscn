@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bykedvcvfk6d4"]
+
+[ext_resource type="Script" uid="uid://cc7eca68yn2he" path="res://Escenas/enemigos/armas_enemigos/arma_enemigo.gd" id="1_63jkc"]
+[ext_resource type="PackedScene" uid="uid://bvqysc8cejrcg" path="res://Escenas/enemigos/armas_enemigos/proyectil_enemigo.tscn" id="2_3tvbx"]
+[ext_resource type="Texture2D" uid="uid://b5ky0q6iywfib" path="res://Escenas/Rooms/escopeta.PNG" id="3_e6j53"]
+
+[node name="ArmaEnemigo" type="Node2D" unique_id=1566639194]
+script = ExtResource("1_63jkc")
+projectile_scene = ExtResource("2_3tvbx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=220170080]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_e6j53")
