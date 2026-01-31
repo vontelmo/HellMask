@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2rmpse5pdiet"
-path="res://.godot/imported/bala.png-307fa9043c2611f2c6a1a490a284e6aa.ctex"
+uid="uid://cucfhaxqr8pxm"
+path="res://.godot/imported/escopeta.PNG-ede64fe1cef1597024a83a27ffeaef3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bala.png"
-dest_files=["res://.godot/imported/bala.png-307fa9043c2611f2c6a1a490a284e6aa.ctex"]
+source_file="res://SpriteArmas/escopeta.PNG"
+dest_files=["res://.godot/imported/escopeta.PNG-ede64fe1cef1597024a83a27ffeaef3d.ctex"]
 
 [params]
 

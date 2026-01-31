@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csxlxrvfv01s3"
-path="res://.godot/imported/ametralladora.png-8982b08a622ac5588dfded11a57bf28a.ctex"
+uid="uid://ceecqud1gnvrf"
+path="res://.godot/imported/ametralladora.PNG-a6a36bd705b84647c78365d7740b406c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ametralladora.png"
-dest_files=["res://.godot/imported/ametralladora.png-8982b08a622ac5588dfded11a57bf28a.ctex"]
+source_file="res://SpriteArmas/ametralladora.PNG"
+dest_files=["res://.godot/imported/ametralladora.PNG-a6a36bd705b84647c78365d7740b406c.ctex"]
 
 [params]
 

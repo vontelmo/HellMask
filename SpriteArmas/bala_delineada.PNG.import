@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkedx3j3cy18k"
-path="res://.godot/imported/escopeta.png-f49389a5528bca0d252afdedfc3e375d.ctex"
+uid="uid://d05ybmtone4qd"
+path="res://.godot/imported/bala_delineada.PNG-a8f760a540a45d70ba82cac531846eab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://escopeta.png"
-dest_files=["res://.godot/imported/escopeta.png-f49389a5528bca0d252afdedfc3e375d.ctex"]
+source_file="res://SpriteArmas/bala_delineada.PNG"
+dest_files=["res://.godot/imported/bala_delineada.PNG-a8f760a540a45d70ba82cac531846eab.ctex"]
 
 [params]
 

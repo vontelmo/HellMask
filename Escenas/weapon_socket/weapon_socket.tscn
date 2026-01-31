@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://bpacn2l4l2j8a"]
 
-[node name="WeaponSocket" type="Node2D" unique_id=1318924881]
+[ext_resource type="Script" uid="uid://dgi0hmh6y3s6p" path="res://Escenas/weapon_socket/weapon_socket.gd" id="1_x31kb"]
+[ext_resource type="PackedScene" uid="uid://26ehwopbfh2p" path="res://Escenas/armas/espada.tscn" id="2_vf7vy"]
+
+[node name="WeaponSocket" type="Marker2D" unique_id=2081015460]
+script = ExtResource("1_x31kb")
+armas = Array[PackedScene]([ExtResource("2_vf7vy")])
