@@ -35,7 +35,7 @@ func _on_body_entered(body: Node2D) -> void:
 				barrera.set_physics_process(false)
 				cerrado_hecho = true
 
-			print("Barrera cerrada inmediatamente ->", cerrado_hecho)
+			print("Barrera cerrada inmediatadsmente ->", cerrado_hecho)
 		else:
 			push_warning("No se encontró barrera válida para cerrar inmediatamente")
 
