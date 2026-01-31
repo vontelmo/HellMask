@@ -30,6 +30,9 @@ func _ready():
 	agent.time_horizon = 1.0
 
 func _process(delta: float) -> void:
+	if health == 0:
+		is_alive = false
+		_death()
 	attack()
 	
 func _physics_process(delta):
