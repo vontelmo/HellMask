@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var masks: Array[PackedScene] 
 var instanciated_masks: Array[Node]

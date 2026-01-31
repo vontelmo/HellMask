@@ -15,6 +15,10 @@ run/main_scene="uid://dvhpcrc7hjyj2"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Roomspawncontroller="*uid://s6perg6ob572"
+
 [global_group]
 
 navmesh=""
