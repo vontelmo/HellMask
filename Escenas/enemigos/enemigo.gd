@@ -5,21 +5,23 @@ class_name Enemigo
 #var player: CharacterBody2D
 #@export var speed : int
 @export var health : int
-@export var weapon : PackedScene
+@export var weapon : Node2D
 @export var damage : float
 @export var attack_speed : float
 @export var range : float
 
 var is_alive
 
-
 @export var speed := 120
-@onready var agent := $NavigationAgent2D
-@onready var player := get_tree().get_first_node_in_group("player")
+@onready var agent = $NavigationAgent2D
+@onready var player = get_tree().get_first_node_in_group("player")
+
+
 
 var last_target_pos: Vector2
 
 func _ready():
+	
 	agent.radius = 20.0  # ejemplo
 	
 	agent.target_position = player.global_position
@@ -31,9 +33,12 @@ func _process(delta: float) -> void:
 	if health == 0:
 		is_alive = false
 		_death()
-
+	attack()
 	
 func _physics_process(delta):
+	_follow_player()
+	
+func _follow_player():
 	if player.global_position.distance_to(last_target_pos) > 16:
 		agent.target_position = player.global_position
 		last_target_pos = player.global_position
@@ -43,7 +48,22 @@ func _physics_process(delta):
 
 	velocity = direction * speed
 	move_and_slide()
-	
+
+func _take_damage(amount):
+	health -= amount
+	if health<= 0:
+		_death()
+
+func attack():
+	if player == null or weapon == null:
+		print("no hay nadaaaa")
+		return
+	if player.global_position.distance_to(last_target_pos) > range:
+		var dir = (player.global_position - global_position).normalized()
+		weapon.try_shoot(global_position, dir)
+		print("disparo desde enemigo")
+
+
 func _death():
 	if not is_alive:
 		if is_inside_tree():
