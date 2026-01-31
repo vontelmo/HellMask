@@ -5,8 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://lxjyffsluu7d" path="res://Escenas/masks/mascara_dimension.tscn" id="2_xa6pu"]
 [ext_resource type="PackedScene" uid="uid://bc1bbf0d44bgr" path="res://Escenas/masks/mascara_dash.tscn" id="3_n5vl0"]
 [ext_resource type="PackedScene" uid="uid://cjb2urphik0ci" path="res://Escenas/masks/mascara_fuerza.tscn" id="4_6a8ci"]
-[ext_resource type="Script" uid="uid://dgi0hmh6y3s6p" path="res://Escenas/weapon_socket/weapon_socket.gd" id="6_6a8ci"]
-[ext_resource type="PackedScene" uid="uid://26ehwopbfh2p" path="res://Escenas/armas/espada.tscn" id="7_u45c2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa6pu"]
 size = Vector2(46, 48)
@@ -16,6 +14,7 @@ size = Vector2(30, 32)
 
 [node name="Player" type="CharacterBody2D" unique_id=1731200291 groups=["player"]]
 collision_layer = 4
+collision_mask = 9
 script = ExtResource("1_pklf0")
 masks = Array[PackedScene]([ExtResource("2_xa6pu"), ExtResource("3_n5vl0"), ExtResource("4_6a8ci")])
 
@@ -34,9 +33,6 @@ shape = SubResource("RectangleShape2D_pklf0")
 [node name="Timer" type="Timer" parent="." unique_id=580111464]
 one_shot = true
 
-[node name="WeaponSocket" type="Node2D" parent="." unique_id=2081217580]
-position = Vector2(36, 0)
-script = ExtResource("6_6a8ci")
-armas = Array[PackedScene]([ExtResource("7_u45c2")])
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1790852728]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
