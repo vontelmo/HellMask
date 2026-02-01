@@ -20,11 +20,6 @@ config/icon="res://icon.svg"
 Roomspawncontroller="*uid://s6perg6ob572"
 ControladorPausa="*uid://dqo1t3fnb1k24"
 
-[display]
-
-window/size/viewport_width=1280
-window/size/viewport_height=720
-
 [global_group]
 
 navmesh=""

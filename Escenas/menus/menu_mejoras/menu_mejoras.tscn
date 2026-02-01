@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://y4c67g0k1axe" path="res://Escenas/mejoras/mejora velocidad/mejora_velocidad.tscn" id="5_4dkko"]
 [ext_resource type="PackedScene" uid="uid://bqe376ls6p502" path="res://Escenas/mejoras/mejora_ametralladora/mejora_ametralladora.tscn" id="6_rqxbj"]
 
-[node name="MenuMejoras" type="Control" unique_id=1317070838]
+[node name="Control" type="CanvasLayer" unique_id=464938925]
+
+[node name="MenuMejoras" type="Control" parent="." unique_id=1317070838]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 8
@@ -18,7 +20,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="." unique_id=570123387]
+[node name="Panel" type="Panel" parent="MenuMejoras" unique_id=570123387]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -32,7 +34,7 @@ offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1042567642]
+[node name="MarginContainer" type="MarginContainer" parent="MenuMejoras/Panel" unique_id=1042567642]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,7 +46,7 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer" unique_id=1566374450]
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuMejoras/Panel/MarginContainer" unique_id=1566374450]
 layout_mode = 2
 theme_override_constants/separation = 24
 script = ExtResource("1_fg7hs")

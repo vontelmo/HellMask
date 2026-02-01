@@ -8,9 +8,8 @@ var enemigos_en_escena = 0
 
 
 var rooms = [
-	"res://Escenas/Rooms/room_1.tscn",
-	"res://Escenas/Rooms/room_prueba.tscn",
-	"res://Escenas/Rooms/room_cruz.tscn"
+	"res://Escenas/Rooms/room_prueba.tscn"
+	
 ]
 
 var cerrar_barrera = true

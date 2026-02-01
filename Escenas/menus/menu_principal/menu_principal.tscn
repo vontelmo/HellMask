@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://kqx7rhtgn6gu"]
 
-[ext_resource type="Script" uid="uid://dqwmqxbr23c48" path="res://Escenas/menus/menu_principal/menu_principal.gd" id="1_45cvj"]
+[ext_resource type="Script" path="res://Escenas/menus/menu_principal/menu_principal.gd" id="1_45cvj"]
 [ext_resource type="Script" uid="uid://dk5k8dymkmyh4" path="res://Escenas/menus/menu_principal/jugar.gd" id="1_ctibf"]
 [ext_resource type="FontFile" uid="uid://b4yi5onvn3jj2" path="res://Escenas/sprites/menu_pricipal/tw-cen-mt-condensed-extrabold.ttf" id="2_j018b"]
 [ext_resource type="PackedScene" uid="uid://dvhpcrc7hjyj2" path="res://Escenas/manager/god_manager.tscn" id="2_wivhk"]
@@ -126,6 +126,9 @@
 [ext_resource type="Texture2D" uid="uid://xplmpivpft5b" path="res://Escenas/sprites/menu_pricipal/Cinders loop 2_1/Comp 1_1117.png" id="123_jfro8"]
 [ext_resource type="Texture2D" uid="uid://bgqlji8p7y0el" path="res://Escenas/sprites/menu_pricipal/Cinders loop 2_1/Comp 1_1118.png" id="124_03wr8"]
 [ext_resource type="Texture2D" uid="uid://coefsgoiecvfw" path="res://Escenas/sprites/menu_pricipal/Cinders loop 2_1/Comp 1_1119.png" id="125_nkiwa"]
+[ext_resource type="Texture2D" uid="uid://bvtyopso74ams" path="res://Escenas/sprites/Fondo/puerta_frente3.PNG" id="127_htsig"]
+[ext_resource type="Texture2D" uid="uid://ck8siy31qjgj0" path="res://Escenas/sprites/Fondo/puerta_frente2.PNG" id="128_fh304"]
+[ext_resource type="Texture2D" uid="uid://bghpaml3i0len" path="res://Escenas/sprites/Fondo/puerta_frente1.PNG" id="129_sbp5m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w3hjg"]
 animations = [{
@@ -568,3 +571,18 @@ theme_override_fonts/font = ExtResource("2_j018b")
 theme_override_font_sizes/font_size = 50
 text = "Salir"
 script = ExtResource("3_j018b")
+
+[node name="PuertaFrente3" type="Sprite2D" parent="Control/VBoxContainer" unique_id=236829379]
+position = Vector2(-211, 207.00003)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("127_htsig")
+
+[node name="PuertaFrente2" type="Sprite2D" parent="Control/VBoxContainer" unique_id=111343652]
+position = Vector2(173.00002, 343.00003)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("128_fh304")
+
+[node name="PuertaFrente1" type="Sprite2D" parent="Control/VBoxContainer" unique_id=121392437]
+position = Vector2(573.0001, 207.00003)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("129_sbp5m")
