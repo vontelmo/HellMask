@@ -12,7 +12,7 @@ func _ready() -> void:
 		instanciated_armas.append(arma.instantiate())
 
 	# arma inicial
-	cambiar_arma(0)
+	cambiar_arma(2)
 
 func _process(delta: float) -> void:
 	var dir := (get_global_mouse_position() - global_position).normalized()
