@@ -50,6 +50,7 @@ tile_set = SubResource("TileSet_le4pq")
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2046183056 groups=["nav_dim_1", "navmesh"]]
 position = Vector2(-8, 0)
 navigation_polygon = SubResource("NavigationPolygon_j78s7")
+enabled = false
 use_edge_connections = false
 script = ExtResource("3_3dnjj")
 
@@ -84,3 +85,6 @@ position = Vector2(430, 294)
 
 [node name="Node" type="Node" parent="." unique_id=464363198]
 script = ExtResource("7_fdpkb")
+
+[editable path="NavigationRegion2D/Clutter1"]
+[editable path="NavigationRegion2DB/Clutter1"]
