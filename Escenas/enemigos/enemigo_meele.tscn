@@ -2,5 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://bhvhnfrmr4tta" path="res://Escenas/enemigos/enemigo.tscn" id="1_itg0s"]
 
-[node name="Enemigo" unique_id=1897216851 groups=["enemies"] instance=ExtResource("1_itg0s")]
-collision_mask = 18
+[node name="EnemigoMelee" unique_id=1897216851 instance=ExtResource("1_itg0s")]
+range = 1.0
+
+[node name="hitbox" parent="." index="2" unique_id=77615442]
+visible = true
+
+[node name="CollisionShape2D" parent="hitbox" index="0" unique_id=2055921416]
+visible = true

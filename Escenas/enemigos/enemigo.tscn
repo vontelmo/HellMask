@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://g8o8xv3x2du7" path="res://Escenas/enemigos/enemigo.gd" id="1_ojia2"]
 [ext_resource type="Texture2D" uid="uid://b38ti04etlcrn" path="res://icon.svg" id="2_0k4c8"]
+[ext_resource type="PackedScene" uid="uid://bykedvcvfk6d4" path="res://Escenas/enemigos/armas_enemigos/arma_enemigo.tscn" id="2_yrpqd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ojia2"]
 custom_solver_bias = 0.174
@@ -16,6 +17,10 @@ collision_layer = 2
 collision_mask = 18
 script = ExtResource("1_ojia2")
 health = 600
+weapon_tscn = ExtResource("2_yrpqd")
+damage = 20.0
+attack_speed = 0.1
+range = 16.0
 speed = 150
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=395078675]
@@ -23,17 +28,19 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_0k4c8")
 
 [node name="hurtbox" type="CollisionShape2D" parent="." unique_id=1387527750]
-position = Vector2(2, 20)
+position = Vector2(-1, 22)
 rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
 shape = SubResource("CapsuleShape2D_ojia2")
 
 [node name="hitbox" type="Area2D" parent="." unique_id=77615442]
+visible = false
 scale = Vector2(0.5, 0.5)
 collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=2055921416]
+visible = false
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_fgr1x")
 debug_color = Color(0, 0.6, 0.69803923, 0.43529412)

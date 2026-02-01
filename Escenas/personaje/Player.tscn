@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d0rltv5tqtcjq"]
 
 [ext_resource type="Script" uid="uid://6w20tvkll0k0" path="res://Escenas/personaje/player.gd" id="1_pklf0"]
+[ext_resource type="PackedScene" uid="uid://kqx7rhtgn6gu" path="res://Escenas/menus/menu_principal/menu_principal.tscn" id="2_lq6sc"]
 [ext_resource type="Texture2D" uid="uid://b38ti04etlcrn" path="res://icon.svg" id="2_mnxds"]
 [ext_resource type="PackedScene" uid="uid://lxjyffsluu7d" path="res://Escenas/masks/mascara_dimension.tscn" id="2_xa6pu"]
 [ext_resource type="PackedScene" uid="uid://bc1bbf0d44bgr" path="res://Escenas/masks/mascara_dash.tscn" id="3_n5vl0"]
@@ -19,7 +20,9 @@ size = Vector2(30, 32)
 collision_layer = 4
 collision_mask = 9
 script = ExtResource("1_pklf0")
+escena_muerte = ExtResource("2_lq6sc")
 masks = Array[PackedScene]([ExtResource("2_xa6pu"), ExtResource("3_n5vl0"), ExtResource("4_6a8ci")])
+_health = 20.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1803931545]
 scale = Vector2(0.3984375, 0.3984375)
