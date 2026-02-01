@@ -11,7 +11,7 @@ var cuarto_inicial_borrado = false
 # sentinel: Vector2.ZERO = "no hay marker pendiente"
 var posicion_puerta_nueva: Vector2 = Vector2.ZERO
 var door_actual: Door = null
-var jugador_esta_listo = false
+
 
 # seguimiento de rooms
 var room_actual: Node = null
@@ -153,7 +153,7 @@ func reportar_posicion_spawnear_jugador(global_position_marker: Vector2) -> void
 	if not player_scene:
 		push_error("player_scene no asignada")
 		return
-	
+
 	player_instance = player_scene.instantiate() as Node2D
 	get_tree().current_scene.add_child(player_instance)
 	await get_tree().process_frame

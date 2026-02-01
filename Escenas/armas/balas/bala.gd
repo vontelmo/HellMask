@@ -18,5 +18,8 @@ func _on_hurtbox_body_entered(body: Node):
 		body._take_damage(damage)
 		print("hago dano")
 		queue_free()
+		
+	if body is TileMapLayer:
+		queue_free()
 	if body.is_in_group("obstacles"):
 		queue_free()
