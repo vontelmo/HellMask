@@ -66,6 +66,7 @@ tile_set = SubResource("TileSet_le4pq")
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=767979305 groups=["navmesh"]]
 position = Vector2(-8, 0)
 navigation_polygon = SubResource("NavigationPolygon_bdcty")
+enabled = false
 use_edge_connections = false
 script = ExtResource("5_myxqk")
 
@@ -75,13 +76,15 @@ position = Vector2(211, 75)
 [node name="NavigationRegion2DB" type="NavigationRegion2D" parent="." unique_id=1857260093 groups=["navmesh"]]
 position = Vector2(-7, 2)
 navigation_polygon = SubResource("NavigationPolygon_go171")
-enabled = false
 use_edge_connections = false
 navigation_layers = 2
 script = ExtResource("5_myxqk")
 
 [node name="Clutter3" parent="NavigationRegion2DB" unique_id=803634948 instance=ExtResource("7_tdlb6")]
 position = Vector2(209, 291)
+
+[node name="Clutter4" parent="NavigationRegion2DB" unique_id=60392377 instance=ExtResource("7_tdlb6")]
+position = Vector2(211, 75)
 
 [node name="MarkerInformaCuarto" parent="." unique_id=1969299295 instance=ExtResource("7_myxqk")]
 
@@ -99,7 +102,7 @@ navigation_polygon = SubResource("NavigationPolygon_bdcty")
 use_edge_connections = false
 script = ExtResource("5_myxqk")
 
-[node name="Clutter3" parent="NavigationRegion2D2" unique_id=803634948 instance=ExtResource("7_tdlb6")]
+[node name="Clutter3" parent="NavigationRegion2D2" unique_id=544152558 instance=ExtResource("7_tdlb6")]
 position = Vector2(213, 165)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=484925513 groups=["obstacles"]]
@@ -109,5 +112,10 @@ collision_mask = 255
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=865989354 groups=["obstacles"]]
 position = Vector2(9, 92)
 shape = SubResource("RectangleShape2D_go171")
+
 [node name="LevelManager" type="Node" parent="." unique_id=1300158395]
 script = ExtResource("9_tdlb6")
+
+[editable path="NavigationRegion2D/Clutter3"]
+[editable path="NavigationRegion2DB/Clutter3"]
+[editable path="NavigationRegion2DB/Clutter4"]

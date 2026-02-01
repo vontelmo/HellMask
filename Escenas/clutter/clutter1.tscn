@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bde3fi3j0v74i"]
 
+[ext_resource type="Script" uid="uid://c0ailr2hfeo5k" path="res://Escenas/clutter/clutter_1.gd" id="1_aevw7"]
 [ext_resource type="Texture2D" uid="uid://b38ti04etlcrn" path="res://icon.svg" id="1_b8fig"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b8fig"]
@@ -10,6 +11,7 @@ size = Vector2(50, 49)
 [node name="Clutter1" type="StaticBody2D" unique_id=803634948 groups=["obstacles"]]
 collision_mask = 65535
 physics_material_override = SubResource("PhysicsMaterial_b8fig")
+script = ExtResource("1_aevw7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1309697940]
 scale = Vector2(0.375, 0.375)

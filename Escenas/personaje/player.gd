@@ -35,10 +35,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("m_dimension"):
-		free_mask()
-		add_child.call_deferred(instanciated_masks[0])
-	elif event.is_action_pressed("m_dash"):
+	#if event.is_action_pressed("m_dimension"):
+	#	free_mask()
+	#	add_child.call_deferred(instanciated_masks[0])
+	if event.is_action_pressed("m_dash"):
 		free_mask()
 		add_child.call_deferred(instanciated_masks[1])
 	elif event.is_action_pressed("m_fuerza"):
