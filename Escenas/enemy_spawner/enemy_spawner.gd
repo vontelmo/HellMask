@@ -1,4 +1,4 @@
-extends Node2D
+extends Marker2D
 
 @export var enemy_pool: Array[PackedScene]
 @export var enemy_count: int
@@ -7,7 +7,9 @@ extends Node2D
 var spawned = 0
 
 func _ready():
+	await get_tree().process_frame
 	spawn_loop()
+
 
 func spawn_loop() -> void:
 	while spawned < enemy_count:
@@ -20,7 +22,7 @@ func _spawn_enemy() -> void:
 	var scene: PackedScene = enemy_pool.pick_random()
 	var enemy = scene.instantiate()
 
-	enemy.global_position = global_position
+	enemy.position = position
 	
 	get_parent().add_child.call_deferred(enemy)
 	

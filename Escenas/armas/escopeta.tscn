@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://d1hxy5lce3y6y" path="res://Escenas/armas/arma.tscn" id="1_w6nd5"]
 [ext_resource type="Script" uid="uid://dwpp3vortj7fh" path="res://Escenas/armas/escopeta.gd" id="2_e2jjm"]
-[ext_resource type="Texture2D" uid="uid://cucfhaxqr8pxm" path="res://SpriteArmas/escopeta.PNG" id="3_au5cc"]
 [ext_resource type="PackedScene" uid="uid://bmdhcn3cj6lgo" path="res://Escenas/armas/balas/bala.tscn" id="3_d57gj"]
+[ext_resource type="Texture2D" uid="uid://cryvqxd1ikbml" path="res://Escenas/sprites/Armas/escopeta.PNG" id="4_d57gj"]
 
 [node name="Escopeta" unique_id=1933793559 instance=ExtResource("1_w6nd5")]
 script = ExtResource("2_e2jjm")
@@ -19,4 +19,4 @@ charging_time = 2.0
 [node name="Sprite2D" type="Sprite2D" parent="." index="1" unique_id=2092346614]
 position = Vector2(32.999996, 0)
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("3_au5cc")
+texture = ExtResource("4_d57gj")

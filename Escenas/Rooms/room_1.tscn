@@ -4,9 +4,10 @@
 [ext_resource type="Script" uid="uid://c1sfsco0s3tn3" path="res://Escenas/Rooms/room_1.gd" id="1_le4pq"]
 [ext_resource type="PackedScene" uid="uid://dlde20tpxi2ef" path="res://Escenas/Rooms/barrera_entrada/barrera_entrada.tscn" id="4_keqd2"]
 [ext_resource type="Script" uid="uid://biwbmyolrr55j" path="res://Escenas/Rooms/navigation_region_2d.gd" id="5_myxqk"]
-[ext_resource type="Script" uid="uid://dc0vxuee2amdg" path="res://Escenas/Rooms/markerreport.gd" id="6_1gb4s"]
+[ext_resource type="Script" path="res://Escenas/Rooms/markerreport.gd" id="6_1gb4s"]
 [ext_resource type="PackedScene" uid="uid://bghd5xcgstvf" path="res://Escenas/Rooms/marker_informa_cuarto/marker_informa_cuarto.tscn" id="7_myxqk"]
 [ext_resource type="PackedScene" uid="uid://bde3fi3j0v74i" path="res://Escenas/clutter/clutter1.tscn" id="7_tdlb6"]
+[ext_resource type="PackedScene" uid="uid://kbxhaqc2ofqt" path="res://Escenas/enemy_spawner/enemy_spawner.tscn" id="8_go171"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mhlau"]
 texture = ExtResource("1_ibahi")
@@ -66,3 +67,8 @@ position = Vector2(213, 165)
 
 [node name="BarreraEntrada2" parent="." unique_id=2070290685 instance=ExtResource("4_keqd2")]
 position = Vector2(64, 94)
+
+[node name="EnemySpawner" parent="." unique_id=1444006752 instance=ExtResource("8_go171")]
+position = Vector2(287, 55)
+enemy_count = 5
+spawn_interval = 1.0

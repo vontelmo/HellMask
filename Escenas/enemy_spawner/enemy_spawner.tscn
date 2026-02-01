@@ -2,8 +2,12 @@
 
 [ext_resource type="Script" uid="uid://cucijc1jj5sjv" path="res://Escenas/enemy_spawner/enemy_spawner.gd" id="1_oa1wq"]
 [ext_resource type="PackedScene" uid="uid://bhvhnfrmr4tta" path="res://Escenas/enemigos/enemigo.tscn" id="2_uh872"]
+[ext_resource type="Texture2D" uid="uid://b38ti04etlcrn" path="res://icon.svg" id="3_ficpp"]
 
-[node name="EnemySpawner" type="Node2D" unique_id=1444006752]
+[node name="EnemySpawner" type="Marker2D" unique_id=1509674467]
 script = ExtResource("1_oa1wq")
 enemy_pool = Array[PackedScene]([ExtResource("2_uh872")])
 enemy_count = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=853218325]
+texture = ExtResource("3_ficpp")

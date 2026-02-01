@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://26ehwopbfh2p"]
 
 [ext_resource type="PackedScene" uid="uid://d1hxy5lce3y6y" path="res://Escenas/armas/arma.tscn" id="1_8jr0i"]
-[ext_resource type="Script" uid="uid://b0oy77w27rrn" path="res://Escenas/armas/espada.gd" id="2_xm03e"]
-[ext_resource type="Texture2D" uid="uid://7g12j8yobwi" path="res://SpriteArmas/espada.PNG" id="3_d6twr"]
+[ext_resource type="Script" uid="uid://djat2tfgj47pc" path="res://Escenas/armas/espada.gd" id="2_xm03e"]
+[ext_resource type="Texture2D" uid="uid://b5daqi57df3sd" path="res://Escenas/sprites/Armas/espada.PNG" id="3_d6twr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5d4g6"]
 size = Vector2(22, 47)
