@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="HellMask"
-run/main_scene="uid://dvhpcrc7hjyj2"
+run/main_scene="uid://kqx7rhtgn6gu"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 GodManager="*uid://cq7h1tpjvxyl3"
 Roomspawncontroller="*uid://s6perg6ob572"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [global_group]
 
