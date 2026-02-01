@@ -5,7 +5,7 @@ extends UpgradeButton
 	.get_node_or_null("WeaponSocket")
 
 func _ready() -> void:
-	titulo = "ESCOPETA"
+	titulo = "ESPADA"
 	super._ready()
 	pressed.connect(_on_pressed)
 
@@ -18,7 +18,7 @@ func _on_pressed() -> void:
 		return
 
 	print("cambiando a escopeta")
-	weapon_socket.cambiar_arma(1)
+	weapon_socket.cambiar_arma(0)
 
 	# borrar el menú (padre)
 	get_parent().queue_free()

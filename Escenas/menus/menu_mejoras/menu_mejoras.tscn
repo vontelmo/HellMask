@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://dqag0u02hysav"]
 
 [ext_resource type="Script" uid="uid://das0e4qhgmjn2" path="res://Escenas/menus/menu_mejoras/agregar_mejoras.gd" id="1_fg7hs"]
-[ext_resource type="PackedScene" uid="uid://k88xqjuei6r0" path="res://Escenas/mejoras/mejora/mejora.tscn" id="2_xoh6r"]
 [ext_resource type="PackedScene" uid="uid://dhr7sy8mouu26" path="res://Escenas/mejoras/mejora_escopeta.tscn" id="3_ul0ip"]
+[ext_resource type="PackedScene" uid="uid://c37sjx1683q7m" path="res://Escenas/mejoras/mejora espada/mejora_espada.tscn" id="3_webb2"]
+[ext_resource type="PackedScene" uid="uid://dheg6c7km2v0q" path="res://Escenas/mejoras/mejora vida/mejora_vida.tscn" id="4_4dkko"]
+[ext_resource type="PackedScene" uid="uid://y4c67g0k1axe" path="res://Escenas/mejoras/mejora velocidad/mejora_velocidad.tscn" id="5_4dkko"]
+[ext_resource type="PackedScene" uid="uid://bqe376ls6p502" path="res://Escenas/mejoras/mejora_ametralladora/mejora_ametralladora.tscn" id="6_rqxbj"]
 
 [node name="MenuMejoras" type="Control" unique_id=1317070838]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,4 +48,4 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 theme_override_constants/separation = 24
 script = ExtResource("1_fg7hs")
-mejoras = Array[PackedScene]([ExtResource("2_xoh6r"), ExtResource("3_ul0ip")])
+mejoras = Array[PackedScene]([ExtResource("3_webb2"), ExtResource("5_4dkko"), ExtResource("6_rqxbj"), ExtResource("3_ul0ip"), ExtResource("4_4dkko")])
