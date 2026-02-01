@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bqe376ls6p502"]
+
+[ext_resource type="PackedScene" uid="uid://k88xqjuei6r0" path="res://Escenas/mejoras/mejora/mejora.tscn" id="1_koihi"]
+[ext_resource type="Script" uid="uid://c08j24d4njw5b" path="res://Escenas/mejoras/mejora_ametralladora/mejora_ametralladora.gd" id="2_0qyq5"]
+
+[node name="Mejora" unique_id=112387519 instance=ExtResource("1_koihi")]
+script = ExtResource("2_0qyq5")

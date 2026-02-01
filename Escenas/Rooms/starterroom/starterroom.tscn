@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c1sfsco0s3tn3" path="res://Escenas/Rooms/room_1.gd" id="1_fdpkb"]
 [ext_resource type="Texture2D" uid="uid://du05xapbso86o" path="res://Escenas/tileset_mazmorra.png" id="1_huqr0"]
 [ext_resource type="Script" uid="uid://biwbmyolrr55j" path="res://Escenas/Rooms/navigation_region_2d.gd" id="3_3dnjj"]
+[ext_resource type="Texture2D" uid="uid://dmvuydwb0ah0q" path="res://Escenas/sprites/Fondo/pisopiso.png" id="3_o876h"]
+[ext_resource type="Texture2D" uid="uid://82teffqg3pi5" path="res://Escenas/sprites/Fondo/paredpared.png" id="4_lhi33"]
 [ext_resource type="PackedScene" uid="uid://cavsm8h3xvqf7" path="res://Escenas/door/door.tscn" id="5_gnxyy"]
 [ext_resource type="PackedScene" uid="uid://xnne11s1l1xe" path="res://Escenas/Rooms/starterroom/spawnearjugador.tscn" id="6_j78s7"]
 [ext_resource type="PackedScene" uid="uid://bghd5xcgstvf" path="res://Escenas/Rooms/marker_informa_cuarto/marker_informa_cuarto.tscn" id="6_xu6pu"]
@@ -27,9 +29,31 @@ texture = ExtResource("1_huqr0")
 2:3/0 = 0
 3:3/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lhi33"]
+texture = ExtResource("3_o876h")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_em1af"]
+texture = ExtResource("4_lhi33")
+texture_region_size = Vector2i(256, 54)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/1 = 1
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ygwmr"]
+texture = ExtResource("4_lhi33")
+texture_region_size = Vector2i(84, 54)
+1:0/0 = 0
+0:0/0 = 0
+2:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_le4pq"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_k25l6")
+sources/1 = SubResource("TileSetAtlasSource_lhi33")
+sources/2 = SubResource("TileSetAtlasSource_em1af")
+sources/3 = SubResource("TileSetAtlasSource_ygwmr")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_j78s7"]
 vertices = PackedVector2Array(632, 438, 338, 438, 338, 122, 632, 122, 798, 438, 712, 438, 712, 122, 798, 122)
@@ -45,7 +69,12 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(325, 448, 805, 448, 805
 script = ExtResource("1_fdpkb")
 
 [node name="Bordes3" type="TileMapLayer" parent="." unique_id=1771221268]
+z_index = -10
 tile_map_data = PackedByteArray("AAAUAAcAAAAAAAAAAAAVAAcAAAAAAAAAAAAWAAcAAAAAAAAAAAAXAAcAAAAAAAAAAAAYAAcAAAAAAAAAAAAZAAcAAAAAAAAAAAAaAAcAAAAAAAAAAAAbAAcAAAAAAAAAAAAcAAcAAAAAAAAAAAAdAAcAAAAAAAAAAAAeAAcAAAAAAAAAAAAfAAcAAAAAAAAAAAAgAAcAAAAAAAAAAAAhAAcAAAAAAAAAAAAiAAcAAAAAAAAAAAAjAAcAAAAAAAAAAAAkAAcAAAAAAAAAAAAlAAcAAAAAAAAAAAAmAAcAAAAAAAAAAAAnAAcAAAAAAAAAAAAoAAcAAAAAAAAAAAApAAcAAAAAAAAAAAAqAAcAAAAAAAAAAAArAAcAAAAAAAAAAAAsAAcAAAAAAAAAAAAtAAcAAAAAAAAAAAAuAAcAAAAAAAAAAAAvAAcAAAAAAAAAAAAwAAcAAAAAAAAAAAAxAAcAAAAAAAAAAAAUAAgAAAAAAAAAAAAUAAkAAAAAAAAAAAAUAAoAAAAAAAAAAAAUAAsAAAAAAAAAAAAUAAwAAAAAAAAAAAAUAA0AAAAAAAAAAAAUAA4AAAAAAAAAAAAUAA8AAAAAAAAAAAAUABAAAAAAAAAAAAAUABEAAAAAAAAAAAAUABIAAAAAAAAAAAAUABMAAAAAAAAAAAAUABQAAAAAAAAAAAAUABUAAAAAAAAAAAAUABYAAAAAAAAAAAAUABcAAAAAAAAAAAAUABgAAAAAAAAAAAAUABkAAAAAAAAAAAAUABoAAAAAAAAAAAAUABsAAAAAAAAAAAAVABsAAAAAAAAAAAAWABsAAAAAAAAAAAAXABsAAAAAAAAAAAAYABsAAAAAAAAAAAAZABsAAAAAAAAAAAAaABsAAAAAAAAAAAAbABsAAAAAAAAAAAAcABsAAAAAAAAAAAAdABsAAAAAAAAAAAAeABsAAAAAAAAAAAAfABsAAAAAAAAAAAAgABsAAAAAAAAAAAAhABsAAAAAAAAAAAAiABsAAAAAAAAAAAAjABsAAAAAAAAAAAAkABsAAAAAAAAAAAAlABsAAAAAAAAAAAAmABsAAAAAAAAAAAAnABsAAAAAAAAAAAAoABsAAAAAAAAAAAApABsAAAAAAAAAAAAqABsAAAAAAAAAAAArABsAAAAAAAAAAAAsABsAAAAAAAAAAAAtABsAAAAAAAAAAAAuABsAAAAAAAAAAAAvABsAAAAAAAAAAAAwABsAAAAAAAAAAAAxABsAAAAAAAAAAAAxAAgAAAAAAAAAAAAxAAkAAAAAAAAAAAAxAAoAAAAAAAAAAAAxAAsAAAAAAAAAAAAxAAwAAAAAAAAAAAAxABoAAAAAAAAAAAAxABkAAAAAAAAAAAAxABgAAAAAAAAAAAAxABcAAAAAAAAAAAAxABYAAAAAAAAAAAAxABUAAAAAAAAAAAAxAA0AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_le4pq")
+
+[node name="Fondopared" type="TileMapLayer" parent="." unique_id=2007808497]
+tile_map_data = PackedByteArray("AAAYAAsAAQAAAAAAAAAgAAsAAQAAAAAAAAAoAAsAAQAAAAAAAAAtAAsAAQAAAAAAAAAtABMAAQAAAAAAAAAlABMAAQAAAAAAAAAdABMAAQAAAAAAAAAYABMAAQAAAAAAAAAYABcAAQAAAAAAAAAgABcAAQAAAAAAAAAoABcAAQAAAAAAAAAtABcAAQAAAAAAAAAVABsAAwAAAAAAAAAaABsAAwABAAAAAAAfABsAAwABAAAAAAAkABsAAwABAAAAAAAoABsAAwABAAAAAAAtABsAAwABAAAAAAAxABsAAwACAAAAAAAUABgAAwABAAAAAFAUABMAAwABAAAAAFAUAA4AAwABAAAAAFAUAAkAAwABAAAAAFAVAAcAAwAAAAAAACAaAAcAAwABAAAAACAfAAcAAwABAAAAACAkAAcAAwABAAAAACApAAcAAwABAAAAACAuAAcAAwABAAAAACAxAAcAAwACAAAAACAyAAoAAwABAAAAAGAyABgAAwABAAAAAGAyAAsAAwAAAAAAAGAyABYAAwAAAAAAAEA=")
 tile_set = SubResource("TileSet_le4pq")
 
 [node name="Obstaculos 1" type="TileMapLayer" parent="." unique_id=845296017]

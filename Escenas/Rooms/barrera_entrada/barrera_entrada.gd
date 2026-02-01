@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		print("Jugador entrando a cuarto nuevo (marker)")
-		#ControladorPausa.pausar()
+		ControladorPausa.toggle_pause()
 		var barrera := get_tree().get_first_node_in_group("sprite_barrera_entrada")
 		
 		
