@@ -37,13 +37,13 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("m_dimension"):
 		free_mask()
-		add_child(instanciated_masks[0])
+		add_child.call_deferred(instanciated_masks[0])
 	elif event.is_action_pressed("m_dash"):
 		free_mask()
-		add_child(instanciated_masks[1])
+		add_child.call_deferred(instanciated_masks[1])
 	elif event.is_action_pressed("m_fuerza"):
 		free_mask()
-		add_child(instanciated_masks[2])
+		add_child.call_deferred(instanciated_masks[2])
 	elif Input.is_action_just_pressed("dash"):
 		if dash:
 			dashear()

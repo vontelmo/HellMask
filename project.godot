@@ -26,6 +26,8 @@ navmesh=""
 obstacles=""
 player=""
 enemies=""
+nav_dim_1=""
+nav_dim_2=""
 
 [input]
 
