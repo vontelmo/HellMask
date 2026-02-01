@@ -30,9 +30,14 @@ texture = ExtResource("1_835mh")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_k25l6")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_75gai"]
+vertices = PackedVector2Array(915, 528, 1144, 628.97656, 14.9609375, 627.0078, 130, 549, 13.03125, 9.9921875, 184, 152, 1144, 9, 816, 191)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(5, 4, 6, 7), PackedInt32Array(7, 6, 1, 0)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(5, 637, 1154, 639, 1154, -1, 3, 0)])
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sxeva"]
-vertices = PackedVector2Array(13.03125, 9.9921875, 1144, 9, 352, 112, 184, 152, 64, 168, 14.9609375, 627.0078, 283, 277, 218.42969, 277, 213, 277.78906, 213, 499, 1144, 628.97656, 283, 499)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(0, 2, 3, 4), PackedInt32Array(5, 0, 4), PackedInt32Array(6, 7, 2), PackedInt32Array(5, 4, 8, 9), PackedInt32Array(10, 5, 9, 11), PackedInt32Array(2, 1, 10, 11, 6)])
+vertices = PackedVector2Array(283, 499, 656, 463, 130, 549, 213, 499, 915, 528, 1144, 628.97656, 14.9609375, 627.0078, 13.03125, 9.9921875, 1144, 9, 816, 191, 213, 277, 283, 277)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 2), PackedInt32Array(4, 5, 6, 2), PackedInt32Array(2, 6, 7), PackedInt32Array(8, 5, 4, 9), PackedInt32Array(10, 7, 8, 9, 11), PackedInt32Array(3, 2, 7, 10), PackedInt32Array(11, 9, 1, 0)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(5, 637, 1154, 639, 1154, -1, 3, 0)])
 
 [node name="Room3" type="Node2D" unique_id=728284854]
@@ -47,22 +52,39 @@ spawn_interval = 0.2
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2046183056 groups=["navmesh"]]
 position = Vector2(-8, 0)
-navigation_polygon = SubResource("NavigationPolygon_sxeva")
+navigation_polygon = SubResource("NavigationPolygon_75gai")
 use_edge_connections = false
 script = ExtResource("5_iq22j")
 
 [node name="Clutter1" parent="NavigationRegion2D" unique_id=803634948 instance=ExtResource("6_eokj1")]
 position = Vector2(248, 440)
 
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Clutter1" unique_id=851553588]
-
 [node name="Clutter2" parent="NavigationRegion2D" unique_id=498341847 instance=ExtResource("6_eokj1")]
 position = Vector2(248, 336)
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D" unique_id=1221683853]
-vertices = PackedVector2Array(64, 168, 216, 280, 352, 112, 184, 152)
+vertices = PackedVector2Array(130, 549, 915, 528, 816, 191, 184, 152)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
+
+[node name="NavigationRegion2D2" type="NavigationRegion2D" parent="." unique_id=788100705 groups=["navmesh"]]
+position = Vector2(37, 757)
+navigation_polygon = SubResource("NavigationPolygon_sxeva")
+use_edge_connections = false
+navigation_layers = 2
+script = ExtResource("5_iq22j")
+
+[node name="Clutter1" parent="NavigationRegion2D2" unique_id=1548114001 instance=ExtResource("6_eokj1")]
+position = Vector2(248, 440)
+
+[node name="Clutter2" parent="NavigationRegion2D2" unique_id=1934737346 instance=ExtResource("6_eokj1")]
+position = Vector2(248, 336)
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D2" unique_id=2011215213]
+vertices = PackedVector2Array(130, 549, 915, 528, 816, 191, 656, 463)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_layers = 2
 
 [node name="Door" parent="." unique_id=226662980 instance=ExtResource("6_75gai")]
 position = Vector2(1126, 255)

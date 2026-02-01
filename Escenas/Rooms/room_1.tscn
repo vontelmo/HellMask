@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bghd5xcgstvf" path="res://Escenas/Rooms/marker_informa_cuarto/marker_informa_cuarto.tscn" id="7_myxqk"]
 [ext_resource type="PackedScene" uid="uid://bde3fi3j0v74i" path="res://Escenas/clutter/clutter1.tscn" id="7_tdlb6"]
 [ext_resource type="PackedScene" uid="uid://kbxhaqc2ofqt" path="res://Escenas/enemy_spawner/enemy_spawner.tscn" id="8_go171"]
+[ext_resource type="Script" uid="uid://dxl1ki4rk713n" path="res://Escenas/Rooms/level_manager.gd" id="9_tdlb6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mhlau"]
 texture = ExtResource("1_ibahi")
@@ -34,9 +35,14 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_mhlau")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bdcty"]
-vertices = PackedVector2Array(326.57813, 29, 313.3828, 351.35938, 248, 199.5, 248, 130.5, 33.796875, 29, 178, 130.5, 31.203125, 156.09375, 137.45313, 157.10156, 178, 199.5, 128.46875, 358.57813)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 4, 5, 7), PackedInt32Array(7, 5, 8, 9), PackedInt32Array(2, 1, 9, 8)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(21, 166, 127, 167, 118, 369, 323, 361, 337, 19, 24, 19)])
+vertices = PackedVector2Array(246, 109.5, 246, 40.5, 325.04688, 16.929688, 326.9375, 366.85938, 27.9375, 15.0625, 176, 40.5, 126.890625, 364.1328, 124.89844, 171.89844, 176, 109.5, 27.046875, 172.89063)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 2, 1, 5), PackedInt32Array(0, 3, 6, 7, 8), PackedInt32Array(7, 9, 4, 5, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(17, 183, 115, 182, 117, 374, 337, 377, 335, 7, 18, 5)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_go171"]
+vertices = PackedVector2Array(244, 325.5, 326.9375, 366.85938, 126.890625, 364.1328, 174, 325.5, 124.89844, 171.89844, 174, 256.5, 325.04688, 16.929688, 244, 256.5, 27.9375, 15.0625, 27.046875, 172.89063)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(6, 1, 0, 7), PackedInt32Array(8, 6, 7, 4), PackedInt32Array(4, 9, 8), PackedInt32Array(4, 7, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(17, 183, 115, 182, 117, 374, 337, 377, 335, 7, 18, 5)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go171"]
 size = Vector2(12, 154)
@@ -64,7 +70,18 @@ use_edge_connections = false
 script = ExtResource("5_myxqk")
 
 [node name="Clutter3" parent="NavigationRegion2D" unique_id=1464823913 instance=ExtResource("7_tdlb6")]
-position = Vector2(213, 165)
+position = Vector2(211, 75)
+
+[node name="NavigationRegion2DB" type="NavigationRegion2D" parent="." unique_id=1857260093 groups=["navmesh"]]
+position = Vector2(-7, 2)
+navigation_polygon = SubResource("NavigationPolygon_go171")
+enabled = false
+use_edge_connections = false
+navigation_layers = 2
+script = ExtResource("5_myxqk")
+
+[node name="Clutter3" parent="NavigationRegion2DB" unique_id=803634948 instance=ExtResource("7_tdlb6")]
+position = Vector2(209, 291)
 
 [node name="MarkerInformaCuarto" parent="." unique_id=1969299295 instance=ExtResource("7_myxqk")]
 
@@ -92,3 +109,5 @@ collision_mask = 255
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=865989354 groups=["obstacles"]]
 position = Vector2(9, 92)
 shape = SubResource("RectangleShape2D_go171")
+[node name="LevelManager" type="Node" parent="." unique_id=1300158395]
+script = ExtResource("9_tdlb6")

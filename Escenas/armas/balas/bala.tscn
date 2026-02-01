@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bmdhcn3cj6lgo"]
 
 [ext_resource type="Script" uid="uid://1dhy74hacu6k" path="res://Escenas/armas/balas/bala.gd" id="1_3rh87"]
-[ext_resource type="Texture2D" uid="uid://b30rvqy2p4gcc" path="res://Escenas/sprites/Armas/bala.PNG" id="2_3rh87"]
+
+[ext_resource type="Texture2D" uid="uid://b30rvqy2p4gcc" path="res://Escenas/sprites/Armas/bala.PNG" id="1_xdyv1"]
+>>>>>>> dimentions
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xdyv1"]
 radius = 2.0

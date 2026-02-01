@@ -1,14 +1,15 @@
-[gd_scene format=4 uid="uid://cxdkbdkxqutfr"]
+[gd_scene format=4 uid="uid://bn4ikovm40qaa"]
 
-[ext_resource type="Script" uid="uid://c1sfsco0s3tn3" path="res://Escenas/Rooms/room_1.gd" id="1_umgyy"]
-[ext_resource type="Texture2D" uid="uid://du05xapbso86o" path="res://Escenas/tileset_mazmorra.png" id="2_wfihm"]
-[ext_resource type="Script" uid="uid://dc0vxuee2amdg" path="res://Escenas/Rooms/markerreport.gd" id="3_xb7wy"]
-[ext_resource type="PackedScene" uid="uid://dlde20tpxi2ef" path="res://Escenas/Rooms/barrera_entrada/barrera_entrada.tscn" id="4_o7se0"]
-[ext_resource type="Script" uid="uid://biwbmyolrr55j" path="res://Escenas/Rooms/navigation_region_2d.gd" id="5_yhcbn"]
-[ext_resource type="PackedScene" uid="uid://bde3fi3j0v74i" path="res://Escenas/clutter/clutter1.tscn" id="7_eyxvp"]
+[ext_resource type="Script" uid="uid://c1sfsco0s3tn3" path="res://Escenas/Rooms/room_1.gd" id="1_l3qfv"]
+[ext_resource type="Texture2D" uid="uid://du05xapbso86o" path="res://Escenas/tileset_mazmorra.png" id="2_lxo85"]
+[ext_resource type="Script" path="res://Escenas/Rooms/markerreport.gd" id="3_6x6hg"]
+[ext_resource type="Script" uid="uid://biwbmyolrr55j" path="res://Escenas/Rooms/navigation_region_2d.gd" id="4_wwvn6"]
+[ext_resource type="PackedScene" uid="uid://bde3fi3j0v74i" path="res://Escenas/clutter/clutter1.tscn" id="5_38myl"]
+[ext_resource type="PackedScene" uid="uid://bghd5xcgstvf" path="res://Escenas/Rooms/marker_informa_cuarto/marker_informa_cuarto.tscn" id="6_udf35"]
+[ext_resource type="PackedScene" uid="uid://dlde20tpxi2ef" path="res://Escenas/Rooms/barrera_entrada/barrera_entrada.tscn" id="7_3etel"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mhlau"]
-texture = ExtResource("2_wfihm")
+texture = ExtResource("2_lxo85")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
 1:0/0 = 0
@@ -35,15 +36,25 @@ custom_data_layer_0/type = 4
 sources/0 = SubResource("TileSetAtlasSource_mhlau")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bdcty"]
-vertices = PackedVector2Array(326.57813, 29, 313.3828, 351.35938, 230, 266, 230, 62, 33.796875, 29, 196, 62, 128.46875, 358.57813, 196, 266, 137.45313, 157.10156, 31.203125, 156.09375)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(2, 1, 6, 7), PackedInt32Array(7, 6, 8, 5), PackedInt32Array(4, 5, 8, 9)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(21, 166, 127, 167, 118, 369, 323, 361, 337, 19, 24, 19)])
+vertices = PackedVector2Array(249, 345.5, 326.9375, 366.85938, 126.890625, 364.1328, 179, 345.5, 124.89844, 171.89844, 179, 276.5, 325.04688, 16.929688, 249, 276.5, 27.9375, 15.0625, 27.046875, 172.89063)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(6, 1, 0, 7), PackedInt32Array(8, 6, 7, 4), PackedInt32Array(4, 9, 8), PackedInt32Array(4, 7, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(17, 183, 115, 182, 117, 374, 337, 377, 335, 7, 18, 5)])
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_75uik"]
+vertices = PackedVector2Array(238, 147.5, 238, 78.5, 325.04688, 16.929688, 326.9375, 366.85938, 27.9375, 15.0625, 168, 78.5, 124.89844, 171.89844, 27.046875, 172.89063, 168, 147.5, 126.890625, 364.1328)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 2, 1, 5), PackedInt32Array(6, 7, 4, 5, 8), PackedInt32Array(0, 3, 9, 6, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(17, 183, 115, 182, 117, 374, 337, 377, 335, 7, 18, 5)])
+
+<<<<<<< HEAD:Escenas/Rooms/room_1B.tscn
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_67j12"]
 size = Vector2(12, 154)
 
 [node name="Room1" type="Node2D" unique_id=728284854 groups=["obstacles"]]
 script = ExtResource("1_umgyy")
+=======
+[node name="Room1" type="Node2D" unique_id=728284854]
+script = ExtResource("1_l3qfv")
+>>>>>>> dimentions:Escenas/Rooms/room_1_B.tscn
 
 [node name="Bordes1" type="TileMapLayer" parent="." unique_id=1771221268 groups=["obstacles"]]
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAsAAAAAAAAAAAABAAsAAAAAAAAAAAACAAsAAAAAAAAAAAADAAsAAAAAAAAAAAAEAAsAAAAAAAAAAAAFAAsAAAAAAAAAAAAGAAsAAAAAAAAAAAAGAAwAAAAAAAAAAAAGAA0AAAAAAAAAAAAGAA4AAAAAAAAAAAAGAA8AAAAAAAAAAAAGABAAAAAAAAAAAAAGABEAAAAAAAAAAAAGABIAAAAAAAAAAAAGABMAAAAAAAAAAAAGABQAAAAAAAAAAAAGABUAAAAAAAAAAAAGABYAAAAAAAAAAAAGABcAAAAAAAAAAAAHABcAAAAAAAAAAAAIABcAAAAAAAAAAAAJABcAAAAAAAAAAAAKABcAAAAAAAAAAAALABcAAAAAAAAAAAAMABcAAAAAAAAAAAANABcAAAAAAAAAAAAOABcAAAAAAAAAAAAPABcAAAAAAAAAAAAQABcAAAAAAAAAAAARABcAAAAAAAAAAAASABcAAAAAAAAAAAATABcAAAAAAAAAAAAUABcAAAAAAAAAAAAUABYAAAAAAAAAAAAUABUAAAAAAAAAAAAUAA0AAAAAAAAAAAAUAAwAAAAAAAAAAAAUAAsAAAAAAAAAAAAUAAoAAAAAAAAAAAAUAAkAAAAAAAAAAAAUAAgAAAAAAAAAAAAUAAcAAAAAAAAAAAAUAAYAAAAAAAAAAAAUAAUAAAAAAAAAAAAUAAQAAAAAAAAAAAAUAAMAAAAAAAAAAAAUAAIAAAAAAAAAAAAUAAEAAAAAAAAAAAAUAAAAAAAAAAAAAAATAAAAAAAAAAAAAAASAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAADAAAAAAAAAAAAAAACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=")
@@ -51,32 +62,35 @@ tile_set = SubResource("TileSet_le4pq")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=764250388]
 position = Vector2(327, 223)
-script = ExtResource("3_xb7wy")
+script = ExtResource("3_6x6hg")
 
 [node name="Bordes2" type="TileMapLayer" parent="." unique_id=112035209 groups=["sprite_barrera_entrada"]]
 tile_map_data = PackedByteArray("AAAAAAMAAAACAAMAAAAAAAQAAAACAAMAAAAAAAUAAAACAAMAAAAAAAYAAAACAAMAAAAAAAcAAAACAAMAAAAAAAgAAAACAAMAAAA=")
 enabled = false
 tile_set = SubResource("TileSet_le4pq")
 
-[node name="BarreraEntrada" parent="." unique_id=863463658 instance=ExtResource("4_o7se0")]
-position = Vector2(55, 93)
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=767979305 groups=["navmesh"]]
 position = Vector2(-8, 0)
 navigation_polygon = SubResource("NavigationPolygon_bdcty")
 use_edge_connections = false
-script = ExtResource("5_yhcbn")
+script = ExtResource("4_wwvn6")
 
-[node name="Clutter3" parent="NavigationRegion2D" unique_id=1464823913 instance=ExtResource("7_eyxvp")]
-position = Vector2(213, 165)
+[node name="Clutter3" parent="NavigationRegion2D" unique_id=1464823913 instance=ExtResource("5_38myl")]
+position = Vector2(214, 311)
 
-[node name="Sprite2D" parent="NavigationRegion2D/Clutter3" index="0" unique_id=1309697940]
-position = Vector2(-3.8146973e-06, 7.6293945e-06)
-scale = Vector2(0.15624994, 1.4375)
+[node name="NavigationRegion2D2" type="NavigationRegion2D" parent="." unique_id=1669069454 groups=["navmesh"]]
+position = Vector2(-7, 2)
+navigation_polygon = SubResource("NavigationPolygon_75uik")
+use_edge_connections = false
+navigation_layers = 2
+script = ExtResource("4_wwvn6")
 
-[node name="CollisionShape2D" parent="NavigationRegion2D/Clutter3" index="1" unique_id=753703411]
-position = Vector2(0, -1)
+[node name="Clutter3" parent="NavigationRegion2D2" unique_id=803634948 instance=ExtResource("5_38myl")]
+position = Vector2(203, 113)
 
+[node name="MarkerInformaCuarto" parent="." unique_id=1969299295 instance=ExtResource("6_udf35")]
+
+Escenas/Rooms/room_1B.tscn
 [node name="Area2D" type="Area2D" parent="." unique_id=1790788828]
 collision_layer = 17
 collision_mask = 5
@@ -86,3 +100,4 @@ position = Vector2(10, 92)
 shape = SubResource("RectangleShape2D_67j12")
 
 [editable path="NavigationRegion2D/Clutter3"]
+

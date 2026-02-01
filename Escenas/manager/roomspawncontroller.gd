@@ -5,7 +5,11 @@ class_name Global
 var player_scene: PackedScene = preload("res://Escenas/personaje/Player.tscn")
 var player_instance: Node2D = null
 
-var rooms = ["res://Escenas/Rooms/room_1.tscn"]
+var rooms = ["res://Escenas/Rooms/room_1.tscn",
+			"res://Escenas/Rooms/room_prueba.tscn",
+			"res://Escenas/Rooms/room_cruz.tscn"
+			
+			]
 var cerrar_barrera = true
 var cuarto_inicial_borrado = false
 # sentinel: Vector2.ZERO = "no hay marker pendiente"
@@ -22,7 +26,10 @@ var starter_room: Node = null
 # protección contra reentradas
 var _cloning_in_progress: bool = false
 
+
 func _ready() -> void:
+	
+	
 	pass
 	
 
@@ -163,3 +170,54 @@ func reportar_posicion_spawnear_jugador(global_position_marker: Vector2) -> void
 	else:
 		push_error("El Player no es Node2D")
 		player_instance = null
+		
+var region_dim_1: NavigationRegion2D
+var region_dim_2: NavigationRegion2D
+
+func registrar_regiones(r1: NavigationRegion2D, r2: NavigationRegion2D):
+	region_dim_1 = r1
+	region_dim_2 = r2 
+	region_dim_2.enabled = false
+	disable_bodies(region_dim_2)
+	print("Regiones registradas correctamente", region_dim_1, region_dim_2)
+
+var dimension_actual := 1  # 1 o 2
+
+func toggle_dimension():
+
+	if dimension_actual == 1:
+		# Pasamos a dimensión 2
+		dimension_actual = 2
+
+		region_dim_1.enabled = false
+		region_dim_2.enabled = true
+
+		disable_bodies(region_dim_1)
+		enable_bodies(region_dim_2, 2, 0)
+
+	else:
+		# Pasamos a dimensión 1
+		dimension_actual = 1
+
+		region_dim_2.enabled = false
+		region_dim_1.enabled = true
+
+		disable_bodies(region_dim_2)
+		enable_bodies(region_dim_1, 1, 0)
+
+	print("Dimensión actual:", dimension_actual)
+
+	# Forzar recalculo de path en los agentes
+	for agent in get_tree().get_nodes_in_group("nav_agents"):
+		agent.target_position = agent.target_position
+
+func disable_bodies(root: Node):
+	for body in root.get_children():
+		if body is StaticBody2D:
+			body.set_deferred("collision_layer", 0)
+			
+func enable_bodies(root: Node, layer: int, mask: int = 0):
+	for body in root.get_children():
+		if body is StaticBody2D:
+			body.set_deferred("collision_layer", layer)
+			body.set_deferred("collision_mask", mask)
