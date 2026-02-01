@@ -61,7 +61,6 @@ func dashear():
 	_is_dashing = true
 	$Timer.start()
 
-
 func _on_timer_timeout() -> void:
 	_is_dashing = false
 	pass # Replace with function body.

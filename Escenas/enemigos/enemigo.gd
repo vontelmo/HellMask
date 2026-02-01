@@ -44,7 +44,21 @@ func _physics_process(delta):
 
 	velocity = direction * speed
 	move_and_slide()
-	
+
+func _take_damage(amount):
+	health -= amount
+	if health<= 0:
+		_death()
+
+func attack():
+	if player == null or weapon == null:
+		#print("no hay nadaaaa")
+		return
+	if player.global_position.distance_to(last_target_pos) > range:
+		var dir = (player.global_position - global_position).normalized()
+		weapon.try_shoot(global_position, dir)
+		#print("disparo desde enemigo")
+
 func _death():
 	if not is_alive:
 		if is_inside_tree():
