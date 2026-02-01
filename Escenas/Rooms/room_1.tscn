@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bde3fi3j0v74i" path="res://Escenas/clutter/clutter1.tscn" id="7_tdlb6"]
 [ext_resource type="PackedScene" uid="uid://kbxhaqc2ofqt" path="res://Escenas/enemy_spawner/enemy_spawner.tscn" id="8_go171"]
 [ext_resource type="Script" uid="uid://dxl1ki4rk713n" path="res://Escenas/Rooms/level_manager.gd" id="9_tdlb6"]
+[ext_resource type="PackedScene" uid="uid://xu1qrsva6fst" path="res://Escenas/Rooms/barrera_entrada/puerta fisica.tscn" id="10_mhlau"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mhlau"]
 texture = ExtResource("1_ibahi")
@@ -115,6 +116,9 @@ shape = SubResource("RectangleShape2D_go171")
 
 [node name="LevelManager" type="Node" parent="." unique_id=1300158395]
 script = ExtResource("9_tdlb6")
+
+[node name="PuertaFisica" parent="." unique_id=1968990186 instance=ExtResource("10_mhlau")]
+position = Vector2(331, 273)
 
 [editable path="NavigationRegion2D/Clutter3"]
 [editable path="NavigationRegion2DB/Clutter3"]

@@ -26,6 +26,7 @@ func _ready():
 	agent.avoidance_enabled = true
 	agent.max_neighbors = 10
 	agent.time_horizon = 1.0
+	Roomspawncontroller.update_enemigo_vivo()
 
 func _process(delta: float) -> void:
 	if health == 0:
@@ -60,6 +61,7 @@ func attack():
 
 func _death():
 	if not is_alive:
+		Roomspawncontroller.update_enemigo_muerto()
 		if is_inside_tree():
 			print("estoy morido")
 			get_parent().remove_child(self)

@@ -1,11 +1,20 @@
 extends UpgradeButton
 
-# Called when the node enters the scene tree for the first time.
+@onready var weapon_socket := get_tree() \
+	.get_first_node_in_group("player") \
+	.get_node_or_null("WeaponSocket")
+
 func _ready() -> void:
 	titulo = "ESCOPETA"
 	super._ready()
-	pass # Replace with function body.
+	pressed.connect(_on_pressed)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_pressed() -> void:
+	print("pausado puta")
+	ControladorPausa.pausar()
+	if weapon_socket == null:
+		push_warning("No se encontró WeaponSocket")
+		return
+	print("cambiando a escopeta")
+	weapon_socket.cambiar_arma(1)
+	ControladorPausa.pausar()
