@@ -3,6 +3,7 @@ class_name Player
 
 @export var masks: Array[PackedScene] 
 var instanciated_masks: Array[Node]
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 var dash = false
 var _is_dashing = false
@@ -19,16 +20,22 @@ func _physics_process(delta: float) -> void:
 	# movimiento 
 	if Input.is_action_pressed("derecha"):
 		velocity.x = _velocidad
+		anim.play("default")
+		
 	elif Input.is_action_pressed("izquierda"):
 		velocity.x = -_velocidad
+		anim.play("default")
 	elif Input.is_action_pressed("abajo"):
 		velocity.y = _velocidad
+		anim.play("default")
 	elif Input.is_action_pressed("arriba"):
 		velocity.y = -_velocidad
+		anim.play("default")
 	elif _is_dashing:
 		var dash_speed := 600.0
 		velocity = dash_speed * dash_dir
 	else:
+		$AnimatedSprite2D.frame = 0
 		velocity.x = 0
 		velocity.y = 0
 	
