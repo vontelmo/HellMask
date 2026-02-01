@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://26ehwopbfh2p" path="res://Escenas/armas/espada.tscn" id="7_u45c2"]
 [ext_resource type="PackedScene" uid="uid://d5nfgeijd81f" path="res://Escenas/armas/escopeta.tscn" id="9_lq6sc"]
 [ext_resource type="PackedScene" uid="uid://cmd0wpcd7bt40" path="res://Escenas/armas/ametralladora.tscn" id="9_vb8xv"]
+[ext_resource type="Texture2D" uid="uid://duu04c2sil67" path="res://Escenas/sprites/Protagonista/Protagonista - Frame 2.png" id="10_keghf"]
+[ext_resource type="Texture2D" uid="uid://lfbb20e2q6x0" path="res://Escenas/sprites/Protagonista/Protagonista - Frame 3.png" id="11_yecun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa6pu"]
 size = Vector2(46, 48)
@@ -16,15 +18,28 @@ size = Vector2(46, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pklf0"]
 size = Vector2(30, 32)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_81r0e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lq6sc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_keghf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_yecun")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D" unique_id=1731200291 groups=["player"]]
 collision_layer = 4
 collision_mask = 9
 script = ExtResource("1_pklf0")
 masks = Array[PackedScene]([ExtResource("2_xa6pu"), ExtResource("3_n5vl0"), ExtResource("4_6a8ci")])
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1803931545]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("5_lq6sc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1714589449]
 shape = SubResource("RectangleShape2D_xa6pu")
@@ -43,5 +58,12 @@ one_shot = true
 position = Vector2(36, 0)
 script = ExtResource("6_6a8ci")
 armas = Array[PackedScene]([ExtResource("7_u45c2"), ExtResource("9_lq6sc"), ExtResource("9_vb8xv")])
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1309471102]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=358820386]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_81r0e")
+frame_progress = 0.62894076
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

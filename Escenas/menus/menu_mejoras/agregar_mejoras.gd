@@ -1,15 +1,19 @@
 extends HBoxContainer
 
-@export var mejoras : Array[PackedScene]
+@export var mejoras: Array[PackedScene]
+@export var cantidad: int = 3
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in range(3):
-		var curr_mejora = mejoras.pick_random().instantiate()
+	if mejoras.is_empty():
+		return
+
+	# no podés pedir más únicas que las que existen
+	var n = min(cantidad, mejoras.size())
+
+	# copia + shuffle para sacar sin repetir
+	var pool: Array[PackedScene] = mejoras.duplicate()
+	pool.shuffle()
+
+	for i in range(n):
+		var curr_mejora = pool[i].instantiate()
 		add_child(curr_mejora)
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
