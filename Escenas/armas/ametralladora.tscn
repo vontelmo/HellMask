@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d1hxy5lce3y6y" path="res://Escenas/armas/arma.tscn" id="1_msaa6"]
 [ext_resource type="Script" uid="uid://vjfl7m1f4yds" path="res://Escenas/armas/ametralladora.gd" id="2_p04cd"]
-[ext_resource type="PackedScene" uid="uid://bmdhcn3cj6lgo" path="res://Escenas/armas/balas/bala.tscn" id="3_kmm0j"]
+[ext_resource type="PackedScene" uid="uid://26ehwopbfh2p" path="res://Escenas/armas/espada.tscn" id="3_kmm0j"]
 [ext_resource type="Texture2D" uid="uid://ohwmh4qxe03m" path="res://Escenas/sprites/Armas/ametralladora.PNG" id="4_kmm0j"]
 
 [node name="Ametralladora" unique_id=1933793559 instance=ExtResource("1_msaa6")]

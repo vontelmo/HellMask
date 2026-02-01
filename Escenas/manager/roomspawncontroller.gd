@@ -1,5 +1,6 @@
-extends Node
 class_name Global
+extends Node
+
 
 @export var door_scene: PackedScene = null
 var player_scene: PackedScene = preload("res://Escenas/personaje/Player.tscn")
@@ -14,28 +15,27 @@ var rooms = [
 var cerrar_barrera = true
 var cuarto_inicial_borrado = false
 
-# sentinel: Vector2.ZERO = "no hay marker pendiente"
 var posicion_puerta_nueva: Vector2 = Vector2.ZERO
 var door_actual: Door = null
 var jugador_esta_listo = false
 
-# seguimiento de rooms
 var room_actual: Node = null
 var room_previous: Node = null
 var starter_room: Node = null
 
-# protección contra reentradas
 var _cloning_in_progress: bool = false
 
 # ---------------- NAVMESH / DIMENSIONES ----------------
 var region_dim_1: NavigationRegion2D
 var region_dim_2: NavigationRegion2D
 
-# COLLISION LAYERS:
-# - Dimensión 1 → layer 1 (valor 1)
-# - Dimensión 2 → layer 2 (valor 2)
-# - Player/enemigos/agentes → layer 1 (o lo que uses), pero MASK = 3 (colisiona con layer 1 y 2)
-const PLAYER_COLLISION_MASK: int = 3  # <--- CLAVE: 3 = bits 1 y 2 → player choca con AMBAS dimensiones
+# GRUPO COMÚN que usan player/agentes/enemigos para encontrar el navmesh activo
+const COMMON_NAV_GROUP: String = "navmesh"
+
+# MASK para colisión de clutter (debe incluir el layer del player)
+# Si tu player está en layer 1 → mask = 1
+# Si colisiona con ambas dimensiones → mask = 3 (recomendado)
+const CLUTTER_COLLISION_MASK: int = 3
 
 var dimension_actual := 1 # 1 o 2
 
@@ -43,7 +43,7 @@ func registrar_regiones(r1: NavigationRegion2D, r2: NavigationRegion2D) -> void:
 	region_dim_1 = r1
 	region_dim_2 = r2
 	
-	# Estado inicial
+	# Estado inicial: dimensión 1 activa, grupo común
 	_set_dimension_active(region_dim_1, true, 1)
 	_set_dimension_active(region_dim_2, false, 2)
 	
@@ -61,48 +61,64 @@ func toggle_dimension() -> void:
 	
 	print("Dimensión actual:", dimension_actual)
 	
-	# Forzar recalculo pathfinding
+	# Forzar recalculo de path en agentes (buscan grupo "navmesh")
 	for agent in get_tree().get_nodes_in_group("nav_agents"):
 		if agent is NavigationAgent2D:
 			agent.target_position = agent.target_position
 
-# Función central: activa/desactiva navmesh + colisiones RECURSIVAS (llega a TODO)
+# Activa/desactiva dimensión completa: navmesh + grupos + colisiones recursivas
 func _set_dimension_active(region: NavigationRegion2D, active: bool, dim_layer: int) -> void:
 	if not region:
 		return
 	
+	# 1. Habilitar/deshabilitar navmesh
 	region.enabled = active
 	
-	print("Activando dimensión layer %d: %s" % [dim_layer, "ACTIVA" if active else "DESACTIVADA"])
+	# 2. Cambiar grupo de la NavigationRegion2D
+	if active:
+		if not region.is_in_group(COMMON_NAV_GROUP):
+			region.add_to_group(COMMON_NAV_GROUP)
+	else:
+		region.remove_from_group(COMMON_NAV_GROUP)
 	
-	_set_collision_recursive(region, active, dim_layer)
+	# 3. Cambiar grupos y colisiones en TODOS los nodos hijos recursivamente
+	_set_groups_and_collision_recursive(region, active, dim_layer)
+	
+	print("Dimensión %d: %s | Grupo '%s' %s" % [
+		dim_layer,
+		"ACTIVA" if active else "DESACTIVA",
+		COMMON_NAV_GROUP,
+		"activado" if active else "desactivado"
+	])
 
-# RECURSIVA PROFUNDA: llega a StaticBody2D aunque estén dentro de Clutter/Clutter2/Clutter3/etc.
-func _set_collision_recursive(node: Node, active: bool, dim_layer: int) -> void:
-	if node is CollisionObject2D:  # StaticBody2D, Area2D, etc.
-		var old_layer = node.collision_layer
-		var old_mask = node.collision_mask
+# Recursiva: cambia grupos + physics layer/mask en toda la jerarquía
+func _set_groups_and_collision_recursive(node: Node, active: bool, dim_layer: int) -> void:
+	# Cambiar grupo común si aplica (para clutter, regiones, etc.)
+	if active:
+		if not node.is_in_group(COMMON_NAV_GROUP):
+			node.add_to_group(COMMON_NAV_GROUP)
+	else:
+		node.remove_from_group(COMMON_NAV_GROUP)
+	
+	# Cambiar physics layer/mask si es CollisionObject2D
+	if node is CollisionObject2D:
+		var new_layer = dim_layer if active else 0
+		var new_mask = CLUTTER_COLLISION_MASK if active else 0
 		
-		node.set_deferred("collision_layer", dim_layer if active else 0)
-		node.set_deferred("collision_mask", PLAYER_COLLISION_MASK if active else 0)
+		node.set_deferred("collision_layer", new_layer)
+		node.set_deferred("collision_mask", new_mask)
 		
-		print("   -> %s: layer %d → %d | mask %d → %d" % [
-			node.name,
-			old_layer,
-			node.collision_layer,
-			old_mask,
-			node.collision_mask
-		])
+		# Debug para verificar en consola
+		print("   → %s: layer → %d | mask → %d" % [node.get_path(), new_layer, new_mask])
 	
 	# Recorre TODOS los hijos (profundidad ilimitada)
 	for child in node.get_children():
-		_set_collision_recursive(child, active, dim_layer)
+		_set_groups_and_collision_recursive(child, active, dim_layer)
 
-# ---------------- EL RESTO DE TU CÓDIGO (sin cambios) ----------------
+# ---------------- EL RESTO DEL CÓDIGO (sin cambios) ----------------
 func _ready() -> void:
 	pass
 
-# ---------------- PUERTAS ----------------
 func register_door(door: Door) -> void:
 	door_actual = door
 	print("Door registrada:", door.name)

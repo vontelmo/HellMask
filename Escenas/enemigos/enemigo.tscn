@@ -39,4 +39,5 @@ shape = SubResource("RectangleShape2D_fgr1x")
 debug_color = Color(0, 0.6, 0.69803923, 0.43529412)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1026617917]
+navigation_layers = 3
 debug_enabled = true
