@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bl0cu15mmk5qh"]
 
-[ext_resource type="Script" uid="uid://dqwmqxbr23c48" path="res://Escenas/menus/menu_principal/menu_principal.gd" id="1_hforf"]
+[ext_resource type="Script" path="res://Escenas/menus/menu_principal/menu_principal.gd" id="1_hforf"]
 [ext_resource type="Texture2D" uid="uid://bvil7xvweyi4d" path="res://Escenas/sprites/menu_pricipal/Cinders loop 2_1/Comp 1_1000.png" id="2_fn7ww"]
 [ext_resource type="Texture2D" uid="uid://cirj7g28d4d3" path="res://Escenas/sprites/menu_pricipal/Cinders loop 2_1/Comp 1_1001.png" id="3_usrdt"]
 [ext_resource type="Texture2D" uid="uid://7aofdafnku5b" path="res://Escenas/sprites/menu_pricipal/Cinders loop 2_1/Comp 1_1002.png" id="4_k66ed"]

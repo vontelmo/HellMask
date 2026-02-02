@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dekyiryc1no0i"
-path="res://.godot/imported/carta_tanque.JPG-cc42c909acc8845b254a5cfb33ef2cbf.ctex"
+uid="uid://b6h2gvx6bvl5"
+path="res://.godot/imported/carta_tanque.jpg-146dfe138241f3a977a736eacd5475fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/sprites/cartas/carta_tanque.JPG"
-dest_files=["res://.godot/imported/carta_tanque.JPG-cc42c909acc8845b254a5cfb33ef2cbf.ctex"]
+source_file="res://Escenas/sprites/cartas/carta_tanque.jpg"
+dest_files=["res://.godot/imported/carta_tanque.jpg-146dfe138241f3a977a736eacd5475fa.ctex"]
 
 [params]
 

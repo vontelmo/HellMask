@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjprj2nj3jprg"
-path="res://.godot/imported/carta_recarga.JPG-edccb5456738b4a78b7135fada051795.ctex"
+uid="uid://djuvtpqgpqvcl"
+path="res://.godot/imported/carta_recarga.jpg-382c6867641a777b3f3336bc83b7e8e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/sprites/cartas/carta_recarga.JPG"
-dest_files=["res://.godot/imported/carta_recarga.JPG-edccb5456738b4a78b7135fada051795.ctex"]
+source_file="res://Escenas/sprites/cartas/carta_recarga.jpg"
+dest_files=["res://.godot/imported/carta_recarga.jpg-382c6867641a777b3f3336bc83b7e8e7.ctex"]
 
 [params]
 

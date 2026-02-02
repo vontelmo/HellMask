@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://6w20tvkll0k0" path="res://Escenas/personaje/player.gd" id="1_pklf0"]
 [ext_resource type="PackedScene" uid="uid://kqx7rhtgn6gu" path="res://Escenas/menus/menu_principal/menu_principal.tscn" id="2_lq6sc"]
 [ext_resource type="PackedScene" uid="uid://lxjyffsluu7d" path="res://Escenas/masks/mascara_dimension.tscn" id="2_xa6pu"]
+[ext_resource type="PackedScene" uid="uid://bl0cu15mmk5qh" path="res://Escenas/menus/menu_final/menu_final.tscn" id="2_yecun"]
 [ext_resource type="PackedScene" uid="uid://bc1bbf0d44bgr" path="res://Escenas/masks/mascara_dash.tscn" id="3_n5vl0"]
 [ext_resource type="PackedScene" uid="uid://cjb2urphik0ci" path="res://Escenas/masks/mascara_fuerza.tscn" id="4_6a8ci"]
 [ext_resource type="Script" uid="uid://cexj7ojmj44ke" path="res://Escenas/weapon_socket/weapon_socket.gd" id="6_6a8ci"]
@@ -92,9 +93,9 @@ animations = [{
 collision_layer = 4
 collision_mask = 9
 script = ExtResource("1_pklf0")
-escena_muerte = ExtResource("2_lq6sc")
+escena_muerte = ExtResource("2_yecun")
 masks = Array[PackedScene]([ExtResource("2_xa6pu"), ExtResource("3_n5vl0"), ExtResource("4_6a8ci")])
-_health = 20.0
+_health = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1714589449]
 shape = SubResource("RectangleShape2D_xa6pu")
@@ -116,6 +117,7 @@ rotation_smoothing_enabled = true
 rotation_smoothing_speed = 4.0
 
 [node name="WeaponSocket" type="Node2D" parent="." unique_id=2081217580]
+z_index = 1
 position = Vector2(30, 15)
 script = ExtResource("6_6a8ci")
 armas = Array[PackedScene]([ExtResource("7_u45c2"), ExtResource("9_lq6sc"), ExtResource("9_vb8xv")])

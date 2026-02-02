@@ -19,6 +19,8 @@ var weapon
 var last_target_pos: Vector2
 
 func _ready():
+	if not is_instance_valid(player):
+		return
 	weapon = weapon_tscn.instantiate()
 	agent.radius = 20.0  # ejemplo
 	
@@ -30,6 +32,10 @@ func _ready():
 	Roomspawncontroller.update_enemigo_vivo()
 
 func _process(delta: float) -> void:
+
+	if not is_instance_valid(player):
+		return
+
 	if health == 0:
 		is_alive = false
 		_death()
@@ -37,6 +43,8 @@ func _process(delta: float) -> void:
 
 	
 func _physics_process(delta):
+	if not is_instance_valid(player):
+		return
 	if player.global_position.distance_to(last_target_pos) > 16:
 		agent.target_position = player.global_position
 		last_target_pos = player.global_position
@@ -56,7 +64,7 @@ func attack():
 	if player == null or weapon == null:
 		#print("no hay nadaaaa")
 		return
-	if player.global_position.distance_to(last_target_pos) > range:
+	if player.global_position.distance_to(last_target_pos) < range:
 		var dir = (player.global_position - global_position).normalized()
 		weapon.try_shoot(global_position, dir)
 		#print("meeleee desde enemigo")

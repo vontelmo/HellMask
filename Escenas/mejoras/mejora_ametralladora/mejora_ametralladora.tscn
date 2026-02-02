@@ -2,6 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://k88xqjuei6r0" path="res://Escenas/mejoras/mejora/mejora.tscn" id="1_koihi"]
 [ext_resource type="Script" uid="uid://c08j24d4njw5b" path="res://Escenas/mejoras/mejora_ametralladora/mejora_ametralladora.gd" id="2_0qyq5"]
+[ext_resource type="Texture2D" uid="uid://hiwduqsf8oaj" path="res://Escenas/sprites/cartas/carta_ametralladora.png" id="3_aawfu"]
 
 [node name="Mejora" unique_id=112387519 instance=ExtResource("1_koihi")]
 script = ExtResource("2_0qyq5")
+
+[node name="Icon" parent="." index="0" unique_id=866077362]
+texture = ExtResource("3_aawfu")

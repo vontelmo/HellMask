@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnflovc0enis0"
-path="res://.godot/imported/carta_espada.PNG-404c95a2227f4f8a543184dd1595bf67.ctex"
+uid="uid://c1ckusdybpdp0"
+path="res://.godot/imported/carta_espada.png-df3773d68aff64c4b7476563c2bb8750.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/sprites/cartas/carta_espada.PNG"
-dest_files=["res://.godot/imported/carta_espada.PNG-404c95a2227f4f8a543184dd1595bf67.ctex"]
+source_file="res://Escenas/sprites/cartas/carta_espada.png"
+dest_files=["res://.godot/imported/carta_espada.png-df3773d68aff64c4b7476563c2bb8750.ctex"]
 
 [params]
 

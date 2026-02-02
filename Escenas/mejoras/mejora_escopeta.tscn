@@ -2,6 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://k88xqjuei6r0" path="res://Escenas/mejoras/mejora/mejora.tscn" id="1_ckkys"]
 [ext_resource type="Script" uid="uid://drmxs41epk6jk" path="res://Escenas/mejoras/mejora_escopeta.gd" id="1_wm0km"]
+[ext_resource type="Texture2D" uid="uid://cbfqrcnjv1x6x" path="res://Escenas/sprites/cartas/carta_escopeta.png" id="3_lmiw7"]
 
 [node name="Mejora" unique_id=112387519 instance=ExtResource("1_ckkys")]
 script = ExtResource("1_wm0km")
+
+[node name="Icon" parent="." index="0" unique_id=866077362]
+texture = ExtResource("3_lmiw7")

@@ -2,7 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://k88xqjuei6r0" path="res://Escenas/mejoras/mejora/mejora.tscn" id="1_uaqwu"]
 [ext_resource type="Script" uid="uid://jegcptluwg65" path="res://Escenas/mejoras/mejora velocidad/mejora_velocidad.gd" id="2_8y3tf"]
+[ext_resource type="Texture2D" uid="uid://dsfx3iqn0ju3y" path="res://Escenas/sprites/cartas/carta_velocidad.jpg" id="3_75ggt"]
 
 [node name="Mejora" unique_id=112387519 instance=ExtResource("1_uaqwu")]
 script = ExtResource("2_8y3tf")
 speed_add = 60.0
+
+[node name="Icon" parent="." index="0" unique_id=866077362]
+texture = ExtResource("3_75ggt")

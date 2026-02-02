@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://du05xapbso86o" path="res://Escenas/tileset_mazmorra.png" id="1_ryymw"]
 [ext_resource type="Texture2D" uid="uid://dmvuydwb0ah0q" path="res://Escenas/sprites/Fondo/pisopiso.png" id="2_fonbc"]
 [ext_resource type="Texture2D" uid="uid://82teffqg3pi5" path="res://Escenas/sprites/Fondo/paredpared.png" id="3_f7uon"]
-[ext_resource type="Texture2D" uid="uid://bffdjp5xu3mbq" path="res://Escenas/sprites/Fondo/obstaculo_1.PNG" id="4_j2hmx"]
-[ext_resource type="Texture2D" uid="uid://bo0s7s8b2gm1s" path="res://Escenas/sprites/Fondo/obstaculo_2.PNG" id="5_ewkyk"]
-[ext_resource type="Texture2D" uid="uid://bhalwqmqgqvea" path="res://Escenas/sprites/Fondo/obstaculo_3.PNG" id="6_8hids"]
+[ext_resource type="Texture2D" uid="uid://bffdjp5xu3mbq" path="res://Escenas/sprites/Fondo/obstaculo_1.png" id="4_j2hmx"]
+[ext_resource type="Texture2D" uid="uid://bo0s7s8b2gm1s" path="res://Escenas/sprites/Fondo/obstaculo_2.png" id="5_ewkyk"]
+[ext_resource type="Texture2D" uid="uid://bhalwqmqgqvea" path="res://Escenas/sprites/Fondo/obstaculo_3.png" id="6_8hids"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k25l6"]
 texture = ExtResource("1_ryymw")

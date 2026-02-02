@@ -9,6 +9,9 @@ var _is_charging = false
 var cooling = false
 var cargas = 0
 
+@onready var sprite: Sprite2D = $Sprite2D
+
+
 func _ready() -> void:
 	cargas = cargas_max
 
@@ -50,3 +53,6 @@ func _on_timer_timeout() -> void:
 		_is_charging = false
 		print("termino de cargar")
 	pass # Replace with function body.
+	
+func actualizar_flip(dir: Vector2) -> void:
+	sprite.flip_v = dir.x < 0

@@ -10,7 +10,7 @@ script = ExtResource("2_p04cd")
 projectile_scene = ExtResource("3_kmm0j")
 bullet_speed = 1000
 cargas_max = 100
-dmg = 10
+dmg = 25
 cooldown = 0.2
 charging_time = 2.0
 

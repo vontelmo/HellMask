@@ -5,7 +5,7 @@ extends UpgradeButton
 @onready var player := get_tree().get_first_node_in_group("player") as Player
 
 func _ready() -> void:
-	titulo = "VIDA +"
+	titulo = ""
 	super._ready()
 	pressed.connect(_on_pressed)
 

@@ -8,5 +8,3 @@ func _ready():
 	var r2 = get_tree().get_first_node_in_group("nav_dim_2")
 
 	print("Buscadas por grupo:", r1, r2)
-
-	Roomspawncontroller.registrar_regiones(r1, r2)

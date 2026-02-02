@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ysh2pqc2imoh"
-path="res://.godot/imported/carta_ametralladora.PNG-619687049a448d69c4517fcc439ba15d.ctex"
+uid="uid://hiwduqsf8oaj"
+path="res://.godot/imported/carta_ametralladora.png-595de195e9604b2120c8c30e28decffc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/sprites/cartas/carta_ametralladora.PNG"
-dest_files=["res://.godot/imported/carta_ametralladora.PNG-619687049a448d69c4517fcc439ba15d.ctex"]
+source_file="res://Escenas/sprites/cartas/carta_ametralladora.png"
+dest_files=["res://.godot/imported/carta_ametralladora.png-595de195e9604b2120c8c30e28decffc.ctex"]
 
 [params]
 
