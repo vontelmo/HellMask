@@ -1,17 +1,28 @@
 [gd_scene format=3 uid="uid://d0rltv5tqtcjq"]
 
 [ext_resource type="Script" uid="uid://6w20tvkll0k0" path="res://Escenas/personaje/player.gd" id="1_pklf0"]
+[ext_resource type="PackedScene" uid="uid://kqx7rhtgn6gu" path="res://Escenas/menus/menu_principal/menu_principal.tscn" id="2_lq6sc"]
 [ext_resource type="PackedScene" uid="uid://lxjyffsluu7d" path="res://Escenas/masks/mascara_dimension.tscn" id="2_xa6pu"]
 [ext_resource type="PackedScene" uid="uid://bl0cu15mmk5qh" path="res://Escenas/menus/menu_final/menu_final.tscn" id="2_yecun"]
 [ext_resource type="PackedScene" uid="uid://bc1bbf0d44bgr" path="res://Escenas/masks/mascara_dash.tscn" id="3_n5vl0"]
 [ext_resource type="PackedScene" uid="uid://cjb2urphik0ci" path="res://Escenas/masks/mascara_fuerza.tscn" id="4_6a8ci"]
-[ext_resource type="Texture2D" uid="uid://bjveetfbbwwf7" path="res://Escenas/sprites/Protagonista/Protagonista - Frame 1.png" id="5_lq6sc"]
 [ext_resource type="Script" uid="uid://cexj7ojmj44ke" path="res://Escenas/weapon_socket/weapon_socket.gd" id="6_6a8ci"]
 [ext_resource type="PackedScene" uid="uid://26ehwopbfh2p" path="res://Escenas/armas/espada.tscn" id="7_u45c2"]
 [ext_resource type="PackedScene" uid="uid://d5nfgeijd81f" path="res://Escenas/armas/escopeta.tscn" id="9_lq6sc"]
 [ext_resource type="PackedScene" uid="uid://b4q1saidqummf" path="res://Escenas/armas/ametralladora.tscn" id="9_vb8xv"]
-[ext_resource type="Texture2D" uid="uid://duu04c2sil67" path="res://Escenas/sprites/Protagonista/Protagonista - Frame 2.png" id="10_keghf"]
-[ext_resource type="Texture2D" uid="uid://lfbb20e2q6x0" path="res://Escenas/sprites/Protagonista/Protagonista - Frame 3.png" id="11_yecun"]
+[ext_resource type="Texture2D" uid="uid://b1e6uroy06kct" path="res://Escenas/sprites/Protagonista /Máscara 2/Protagonista - Frame 1 - Máscara 2.png" id="10_53ofv"]
+[ext_resource type="Texture2D" uid="uid://ceha2e6e0c3tq" path="res://Escenas/sprites/Protagonista /Máscara 2/Protagonista - Frame 2 - Máscara 2.png" id="11_wm4ww"]
+[ext_resource type="Texture2D" uid="uid://dv88e375xaqwa" path="res://Escenas/sprites/Protagonista /Máscara 2/Protagonista - Frame 3 - Máscara 2.png" id="12_ykm28"]
+[ext_resource type="Texture2D" uid="uid://bk68o8p11kons" path="res://Escenas/sprites/Protagonista /Máscara 1/Protagonista - Frame 1 - Máscara 1.png" id="13_54nrr"]
+[ext_resource type="PackedScene" uid="uid://offc5v8uwgah" path="res://Escenas/ui/ui.tscn" id="13_81r0e"]
+[ext_resource type="Texture2D" uid="uid://dmlccstk82iwd" path="res://Escenas/sprites/Protagonista /Máscara 1/Protagonista - Frame 2 - Máscara 1.png" id="14_dx0m3"]
+[ext_resource type="Texture2D" uid="uid://bxhtgnon036mx" path="res://Escenas/sprites/Protagonista /Máscara 1/Protagonista - Frame 3 - Máscara 1.png" id="15_i14yt"]
+[ext_resource type="Texture2D" uid="uid://cyvgilsme1urk" path="res://Escenas/sprites/Protagonista /Máscara 3/Protagonista - Frame 1 - Máscara 3.png" id="16_xwas8"]
+[ext_resource type="Texture2D" uid="uid://ceq2t3qvnbnbn" path="res://Escenas/sprites/Protagonista /Máscara 3/Protagonista - Frame 2 - Máscara 3.png" id="17_wciaw"]
+[ext_resource type="Texture2D" uid="uid://blh8h21xd27ax" path="res://Escenas/sprites/Protagonista /Máscara 3/Protagonista - Frame 3 - Máscara 3.png" id="18_p0y0w"]
+[ext_resource type="Texture2D" uid="uid://cgam4yip3k0qa" path="res://Escenas/sprites/Protagonista /Sin Mascara/Protagonista - Frame 1.png" id="19_sjqjf"]
+[ext_resource type="Texture2D" uid="uid://c3agwej8dyqq1" path="res://Escenas/sprites/Protagonista /Sin Mascara/Protagonista - Frame 2.png" id="20_qk1wb"]
+[ext_resource type="Texture2D" uid="uid://cp0txia6hk2de" path="res://Escenas/sprites/Protagonista /Sin Mascara/Protagonista - Frame 3.png" id="21_7aiq7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa6pu"]
 size = Vector2(46, 48)
@@ -23,16 +34,58 @@ size = Vector2(30, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_lq6sc")
+"texture": ExtResource("10_53ofv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_keghf")
+"texture": ExtResource("11_wm4ww")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_yecun")
+"texture": ExtResource("12_ykm28")
 }],
 "loop": true,
-"name": &"default",
+"name": &"mask dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_54nrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_dx0m3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_i14yt")
+}],
+"loop": true,
+"name": &"mask dim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_xwas8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wciaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_p0y0w")
+}],
+"loop": true,
+"name": &"mask_dano",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_sjqjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_qk1wb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_7aiq7")
+}],
+"loop": true,
+"name": &"run",
 "speed": 5.0
 }]
 
@@ -75,6 +128,8 @@ armas = Array[PackedScene]([ExtResource("7_u45c2"), ExtResource("9_lq6sc"), ExtR
 position = Vector2(-0.99999994, -0.99999994)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_81r0e")
-frame_progress = 0.62894076
+animation = &"run"
+
+[node name="ui" parent="." unique_id=849834834 instance=ExtResource("13_81r0e")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

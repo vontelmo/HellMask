@@ -5,6 +5,7 @@ class_name Player
 @export var masks: Array[PackedScene] 
 var instanciated_masks: Array[Node]
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var healthbar := get_node("ui/healthbar")
 
 var dash = false
 var _is_dashing = false
@@ -17,6 +18,9 @@ func _ready() -> void:
 	for mask in masks:
 		instanciated_masks.append(mask.instantiate())
 	instanciated_masks[1].enable_dash.connect(_activar_dash)
+	healthbar.max_value = _health
+	healthbar.value = _health
+	anim.play("run")
 	
 func _process(delta: float) -> void:
 	if _health <= 0:
@@ -26,17 +30,17 @@ func _physics_process(delta: float) -> void:
 	# movimiento 
 	if Input.is_action_pressed("derecha"):
 		velocity.x = _velocidad
-		anim.play("default")
+		anim.play()
 		
 	elif Input.is_action_pressed("izquierda"):
 		velocity.x = -_velocidad
-		anim.play("default")
+		anim.play()
 	elif Input.is_action_pressed("abajo"):
 		velocity.y = _velocidad
-		anim.play("default")
+		anim.play()
 	elif Input.is_action_pressed("arriba"):
 		velocity.y = -_velocidad
-		anim.play("default")
+		anim.play()
 	elif _is_dashing:
 		var dash_speed := 600.0
 		velocity = dash_speed * dash_dir
@@ -48,15 +52,16 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
-	#if event.is_action_pressed("m_dimension"):
-	#	free_mask()
-	#	add_child.call_deferred(instanciated_masks[0])
-	if event.is_action_pressed("m_dash"):
+	if event.is_action_pressed("m_dimension"):
+		anim.play("mask dim")
+	elif event.is_action_pressed("m_dash"):
 		free_mask()
 		add_child.call_deferred(instanciated_masks[1])
+		anim.play("mask dash")
 	elif event.is_action_pressed("m_fuerza"):
 		free_mask()
 		add_child.call_deferred(instanciated_masks[2])
+		anim.play("mask_dano")
 	elif Input.is_action_just_pressed("dash"):
 		if dash:
 			dashear()
@@ -81,6 +86,7 @@ func _on_timer_timeout() -> void:
 func _take_damage(damage):
 	print("me hacen dano:", damage)
 	_health -= damage
+	healthbar.value = _health
 	if _health <= 0:
 		_death()
 	

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bo5q44gf2bt3e"]
+
+[ext_resource type="Texture2D" uid="uid://bs148sn0dqgh1" path="res://Escenas/sprites/ui/Barra_HP_empty_Mesa_de_trabajo_1.png" id="1_nk7l1"]
+[ext_resource type="Texture2D" uid="uid://de644bpbnon8g" path="res://Escenas/sprites/ui/Barra_HP_full.png" id="2_eeo86"]
+
+[node name="healthbar" type="TextureProgressBar" unique_id=776516311]
+offset_right = 8119.0
+offset_bottom = 4619.0
+scale = Vector2(0.14, 0.14)
+max_value = 600.0
+texture_under = ExtResource("1_nk7l1")
+texture_over = ExtResource("1_nk7l1")
+texture_progress = ExtResource("2_eeo86")
