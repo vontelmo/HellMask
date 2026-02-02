@@ -5,6 +5,7 @@ class_name Player
 @export var masks: Array[PackedScene] 
 var instanciated_masks: Array[Node]
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var healthbar := get_node("ui/healthbar")
 
 var dash = false
 var _is_dashing = false
@@ -17,6 +18,8 @@ func _ready() -> void:
 	for mask in masks:
 		instanciated_masks.append(mask.instantiate())
 	instanciated_masks[1].enable_dash.connect(_activar_dash)
+	healthbar.max_value = _health
+	healthbar.value = _health
 	
 func _process(delta: float) -> void:
 	if _health == 0:
@@ -82,6 +85,7 @@ func _on_timer_timeout() -> void:
 func _take_damage(damage):
 	print("me hacen dano:", damage)
 	_health -= damage
+	healthbar.value = _health
 	if _health <= 0:
 		_death()
 	

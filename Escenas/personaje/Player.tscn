@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://6w20tvkll0k0" path="res://Escenas/personaje/player.gd" id="1_pklf0"]
 [ext_resource type="PackedScene" uid="uid://kqx7rhtgn6gu" path="res://Escenas/menus/menu_principal/menu_principal.tscn" id="2_lq6sc"]
-[ext_resource type="Texture2D" uid="uid://b38ti04etlcrn" path="res://icon.svg" id="2_mnxds"]
 [ext_resource type="PackedScene" uid="uid://lxjyffsluu7d" path="res://Escenas/masks/mascara_dimension.tscn" id="2_xa6pu"]
 [ext_resource type="PackedScene" uid="uid://bc1bbf0d44bgr" path="res://Escenas/masks/mascara_dash.tscn" id="3_n5vl0"]
 [ext_resource type="PackedScene" uid="uid://cjb2urphik0ci" path="res://Escenas/masks/mascara_fuerza.tscn" id="4_6a8ci"]
@@ -13,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b4q1saidqummf" path="res://Escenas/armas/ametralladora.tscn" id="9_vb8xv"]
 [ext_resource type="Texture2D" uid="uid://duu04c2sil67" path="res://Escenas/sprites/Protagonista/Protagonista - Frame 2.png" id="10_keghf"]
 [ext_resource type="Texture2D" uid="uid://lfbb20e2q6x0" path="res://Escenas/sprites/Protagonista/Protagonista - Frame 3.png" id="11_yecun"]
+[ext_resource type="PackedScene" uid="uid://offc5v8uwgah" path="res://Escenas/ui/ui.tscn" id="13_81r0e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa6pu"]
 size = Vector2(46, 48)
@@ -76,5 +76,7 @@ position = Vector2(-0.99999994, -0.99999994)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_81r0e")
 frame_progress = 0.62894076
+
+[node name="ui" parent="." unique_id=849834834 instance=ExtResource("13_81r0e")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
