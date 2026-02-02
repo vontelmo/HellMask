@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csyc6744julsd"
-path="res://.godot/imported/carta_velocidad.JPG-c91c6934161b116beaf5c0162fd0d431.ctex"
+uid="uid://dsfx3iqn0ju3y"
+path="res://.godot/imported/carta_velocidad.jpg-7d7e3e7fb612a27e678c728dd4ec61a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/sprites/cartas/carta_velocidad.JPG"
-dest_files=["res://.godot/imported/carta_velocidad.JPG-c91c6934161b116beaf5c0162fd0d431.ctex"]
+source_file="res://Escenas/sprites/cartas/carta_velocidad.jpg"
+dest_files=["res://.godot/imported/carta_velocidad.jpg-7d7e3e7fb612a27e678c728dd4ec61a2.ctex"]
 
 [params]
 

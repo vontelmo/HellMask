@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ds51xr2jnupo6"]
+
+[ext_resource type="PackedScene" uid="uid://bhvhnfrmr4tta" path="res://Escenas/enemigos/enemigo.tscn" id="1_iviis"]
+[ext_resource type="Texture2D" uid="uid://bplg11tgqd581" path="res://Escenas/sprites/Enemigos/enemigo_lento.PNG" id="2_iviis"]
+
+[node name="EnemigoMelee" unique_id=1897216851 instance=ExtResource("1_iviis")]
+damage = 50.0
+attack_speed = 2.0
+range = 1.0
+speed = 25
+
+[node name="Sprite2D" parent="." index="0" unique_id=395078675]
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_iviis")

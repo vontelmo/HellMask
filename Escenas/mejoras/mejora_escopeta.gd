@@ -5,7 +5,7 @@ extends UpgradeButton
 	.get_node_or_null("WeaponSocket")
 
 func _ready() -> void:
-	titulo = "ESCOPETA"
+	titulo = ""
 	super._ready()
 	pressed.connect(_on_pressed)
 

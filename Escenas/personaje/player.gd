@@ -19,9 +19,8 @@ func _ready() -> void:
 	instanciated_masks[1].enable_dash.connect(_activar_dash)
 	
 func _process(delta: float) -> void:
-	if _health == 0:
+	if _health <= 0:
 		is_alive = false
-		_death()
 
 func _physics_process(delta: float) -> void:
 	# movimiento 
@@ -85,10 +84,15 @@ func _take_damage(damage):
 	if _health <= 0:
 		_death()
 	
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+func actualizar_flip(direccion: Vector2) -> void:
+	sprite.flip_h = direccion.x < 0
+
 func _death():
 	if not is_alive:
 		if is_inside_tree():
 			print("estoy morido")
 			get_tree().change_scene_to_packed(escena_muerte)
-			
+
 			

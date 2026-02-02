@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c50ael6t2fo4g"
-path="res://.godot/imported/carta_slow.JPG-c046e951d9bdafce7c3f4f1a77fb46c2.ctex"
+uid="uid://djd40ru6w06hf"
+path="res://.godot/imported/carta_slow.jpg-b5b4c76fd1fef1c12ca6c36384cbc8cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/sprites/cartas/carta_slow.JPG"
-dest_files=["res://.godot/imported/carta_slow.JPG-c046e951d9bdafce7c3f4f1a77fb46c2.ctex"]
+source_file="res://Escenas/sprites/cartas/carta_slow.jpg"
+dest_files=["res://.godot/imported/carta_slow.jpg-b5b4c76fd1fef1c12ca6c36384cbc8cf.ctex"]
 
 [params]
 

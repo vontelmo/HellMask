@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0j5uofng2ev4"
-path="res://.godot/imported/carta_escopeta.PNG-d8715fbb7c4ee6c932535733e012e49a.ctex"
+uid="uid://cbfqrcnjv1x6x"
+path="res://.godot/imported/carta_escopeta.png-3e607f57b806b27cd6f2b7b181caff55.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/sprites/cartas/carta_escopeta.PNG"
-dest_files=["res://.godot/imported/carta_escopeta.PNG-d8715fbb7c4ee6c932535733e012e49a.ctex"]
+source_file="res://Escenas/sprites/cartas/carta_escopeta.png"
+dest_files=["res://.godot/imported/carta_escopeta.png-3e607f57b806b27cd6f2b7b181caff55.ctex"]
 
 [params]
 

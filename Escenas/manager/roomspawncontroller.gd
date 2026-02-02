@@ -26,95 +26,6 @@ var starter_room: Node = null
 
 var _cloning_in_progress: bool = false
 
-# ---------------- NAVMESH / DIMENSIONES ----------------
-var region_dim_1: NavigationRegion2D
-var region_dim_2: NavigationRegion2D
-
-# GRUPO COMÚN que usan player/agentes/enemigos para encontrar el navmesh activo
-const COMMON_NAV_GROUP: String = "navmesh"
-
-# MASK para colisión de clutter (debe incluir el layer del player)
-# Si tu player está en layer 1 → mask = 1
-# Si colisiona con ambas dimensiones → mask = 3 (recomendado)
-const CLUTTER_COLLISION_MASK: int = 3
-
-var dimension_actual := 1 # 1 o 2
-
-func registrar_regiones(r1: NavigationRegion2D, r2: NavigationRegion2D) -> void:
-	region_dim_1 = r1
-	region_dim_2 = r2
-	
-	# Estado inicial: dimensión 1 activa, grupo común
-	_set_dimension_active(region_dim_1, true, 1)
-	_set_dimension_active(region_dim_2, false, 2)
-	
-	print("Regiones registradas correctamente")
-
-func toggle_dimension() -> void:
-	if dimension_actual == 1:
-		dimension_actual = 2
-		_set_dimension_active(region_dim_1, false, 1)
-		_set_dimension_active(region_dim_2, true, 2)
-	else:
-		dimension_actual = 1
-		_set_dimension_active(region_dim_2, false, 2)
-		_set_dimension_active(region_dim_1, true, 1)
-	
-	print("Dimensión actual:", dimension_actual)
-	
-	# Forzar recalculo de path en agentes (buscan grupo "navmesh")
-	for agent in get_tree().get_nodes_in_group("nav_agents"):
-		if agent is NavigationAgent2D:
-			agent.target_position = agent.target_position
-
-# Activa/desactiva dimensión completa: navmesh + grupos + colisiones recursivas
-func _set_dimension_active(region: NavigationRegion2D, active: bool, dim_layer: int) -> void:
-	if not region:
-		return
-	
-	# 1. Habilitar/deshabilitar navmesh
-	region.enabled = active
-	
-	# 2. Cambiar grupo de la NavigationRegion2D
-	if active:
-		if not region.is_in_group(COMMON_NAV_GROUP):
-			region.add_to_group(COMMON_NAV_GROUP)
-	else:
-		region.remove_from_group(COMMON_NAV_GROUP)
-	
-	# 3. Cambiar grupos y colisiones en TODOS los nodos hijos recursivamente
-	_set_groups_and_collision_recursive(region, active, dim_layer)
-	
-	print("Dimensión %d: %s | Grupo '%s' %s" % [
-		dim_layer,
-		"ACTIVA" if active else "DESACTIVA",
-		COMMON_NAV_GROUP,
-		"activado" if active else "desactivado"
-	])
-
-# Recursiva: cambia grupos + physics layer/mask en toda la jerarquía
-func _set_groups_and_collision_recursive(node: Node, active: bool, dim_layer: int) -> void:
-	# Cambiar grupo común si aplica (para clutter, regiones, etc.)
-	if active:
-		if not node.is_in_group(COMMON_NAV_GROUP):
-			node.add_to_group(COMMON_NAV_GROUP)
-	else:
-		node.remove_from_group(COMMON_NAV_GROUP)
-	
-	# Cambiar physics layer/mask si es CollisionObject2D
-	if node is CollisionObject2D:
-		var new_layer = dim_layer if active else 0
-		var new_mask = CLUTTER_COLLISION_MASK if active else 0
-		
-		node.set_deferred("collision_layer", new_layer)
-		node.set_deferred("collision_mask", new_mask)
-		
-		# Debug para verificar en consola
-		print("   → %s: layer → %d | mask → %d" % [node.get_path(), new_layer, new_mask])
-	
-	# Recorre TODOS los hijos (profundidad ilimitada)
-	for child in node.get_children():
-		_set_groups_and_collision_recursive(child, active, dim_layer)
 
 # ---------------- EL RESTO DEL CÓDIGO (sin cambios) ----------------
 func _ready() -> void:
@@ -240,3 +151,30 @@ func update_enemigo_vivo():
 	enemigos_en_escena = enemigos_en_escena+1
 	print("quedan" , enemigos_en_escena, " enemigos")
 	
+#-------------------RESET-----------------------
+
+func reset():
+	print("Reset Roomspawncontroller")
+
+	player_instance = null
+	enemigos_en_escena = 0
+
+	posicion_puerta_nueva = Vector2.ZERO
+	door_actual = null
+	jugador_esta_listo = false
+
+	room_actual = null
+	room_previous = null
+	starter_room = null
+
+	_cloning_in_progress = false
+	cerrar_barrera = true
+	cuarto_inicial_borrado = false
+
+func clear_starter_room():
+	if starter_room and is_instance_valid(starter_room):
+		for child in starter_room.get_children():
+			child.queue_free()
+		print("Starter room vaciada")
+	else:
+		print("No hay starter_room válida")

@@ -7,4 +7,5 @@ func _ready() -> void:
 	pressed.connect(retry, 4)
 
 func retry():
+	
 	get_tree().change_scene_to_packed(manager)

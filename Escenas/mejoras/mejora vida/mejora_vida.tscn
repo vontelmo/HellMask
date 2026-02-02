@@ -2,7 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://k88xqjuei6r0" path="res://Escenas/mejoras/mejora/mejora.tscn" id="1_sy3sf"]
 [ext_resource type="Script" uid="uid://52d6nmh36l1e" path="res://Escenas/mejoras/mejora vida/mejora_vida.gd" id="2_elsll"]
+[ext_resource type="Texture2D" uid="uid://dmewehykeux1g" path="res://Escenas/sprites/cartas/carta_rebote.png" id="3_elsll"]
 
 [node name="Mejora" unique_id=112387519 instance=ExtResource("1_sy3sf")]
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("2_elsll")
 health_add = 25.0
+
+[node name="Icon" parent="." index="0" unique_id=866077362]
+texture = ExtResource("3_elsll")

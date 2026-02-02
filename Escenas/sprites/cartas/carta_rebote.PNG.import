@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba11ctchs1a7r"
-path="res://.godot/imported/carta_rebote.PNG-b0f800a9cfe1d104dbb8a5ad40928ae3.ctex"
+uid="uid://dmewehykeux1g"
+path="res://.godot/imported/carta_rebote.png-3d3f17f5fedbb7251855cbccccce59c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/sprites/cartas/carta_rebote.PNG"
-dest_files=["res://.godot/imported/carta_rebote.PNG-b0f800a9cfe1d104dbb8a5ad40928ae3.ctex"]
+source_file="res://Escenas/sprites/cartas/carta_rebote.png"
+dest_files=["res://.godot/imported/carta_rebote.png-3d3f17f5fedbb7251855cbccccce59c0.ctex"]
 
 [params]
 

@@ -4,7 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://byjy0ngkh0mbu" path="res://Escenas/sprites/Enemigos/enemigo_rapido.PNG" id="2_jvp02"]
 
 [node name="EnemigoMelee" unique_id=1897216851 instance=ExtResource("1_itg0s")]
+health = 500
 range = 1.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=395078675]
+position = Vector2(0, -7.9999995)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_jvp02")
 
 [node name="hitbox" parent="." index="2" unique_id=77615442]
 visible = true

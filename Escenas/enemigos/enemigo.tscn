@@ -12,6 +12,44 @@ height = 104.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fgr1x"]
 size = Vector2(240, 240)
 
+[sub_resource type="Animation" id="Animation_0k4c8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yrpqd"]
+resource_name = "tween"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-0.048894208, -3.5015624), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fgr1x"]
+_data = {
+&"RESET": SubResource("Animation_0k4c8"),
+&"tween": SubResource("Animation_yrpqd")
+}
+
 [node name="Enemigo" type="CharacterBody2D" unique_id=1897216851 groups=["enemies", "nav_agents"]]
 collision_layer = 2
 collision_mask = 18
@@ -24,7 +62,7 @@ range = 16.0
 speed = 150
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=395078675]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.45, 0.5)
 texture = ExtResource("2_0k4c8")
 
 [node name="hurtbox" type="CollisionShape2D" parent="." unique_id=1387527750]
@@ -34,13 +72,11 @@ scale = Vector2(0.5, 0.5)
 shape = SubResource("CapsuleShape2D_ojia2")
 
 [node name="hitbox" type="Area2D" parent="." unique_id=77615442]
-visible = false
 scale = Vector2(0.5, 0.5)
 collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=2055921416]
-visible = false
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_fgr1x")
 debug_color = Color(0, 0.6, 0.69803923, 0.43529412)
@@ -48,3 +84,6 @@ debug_color = Color(0, 0.6, 0.69803923, 0.43529412)
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1026617917]
 navigation_layers = 3
 debug_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1117050595]
+libraries/ = SubResource("AnimationLibrary_fgr1x")

@@ -7,6 +7,8 @@ extends Node2D
 @onready var nav_region2 := $NavigationRegion2D2
 
 
+	
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("m_dimension"):
 		tiles_obs1.enabled = !tiles_obs1.enabled
