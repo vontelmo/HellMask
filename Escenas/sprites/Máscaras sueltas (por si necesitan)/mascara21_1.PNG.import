@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lfbb20e2q6x0"
-path="res://.godot/imported/Protagonista - Frame 3.png-6aee5807b3bc9ca8191aabefd5deef57.ctex"
+uid="uid://ufhxehpdav1b"
+path="res://.godot/imported/mascara21_1.PNG-6c1e702421231679193a6644c57597cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenas/sprites/Protagonista/Protagonista - Frame 3.png"
-dest_files=["res://.godot/imported/Protagonista - Frame 3.png-6aee5807b3bc9ca8191aabefd5deef57.ctex"]
+source_file="res://Escenas/sprites/Máscaras sueltas (por si necesitan)/mascara21_1.PNG"
+dest_files=["res://.godot/imported/mascara21_1.PNG-6c1e702421231679193a6644c57597cd.ctex"]
 
 [params]
 
