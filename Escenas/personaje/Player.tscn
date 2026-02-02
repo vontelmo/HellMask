@@ -8,13 +8,9 @@
 [ext_resource type="Script" uid="uid://cexj7ojmj44ke" path="res://Escenas/weapon_socket/weapon_socket.gd" id="6_6a8ci"]
 [ext_resource type="PackedScene" uid="uid://26ehwopbfh2p" path="res://Escenas/armas/espada.tscn" id="7_u45c2"]
 [ext_resource type="PackedScene" uid="uid://d5nfgeijd81f" path="res://Escenas/armas/escopeta.tscn" id="9_lq6sc"]
-
 [ext_resource type="PackedScene" uid="uid://b4q1saidqummf" path="res://Escenas/armas/ametralladora.tscn" id="9_vb8xv"]
-
-[ext_resource type="PackedScene" uid="uid://cmd0wpcd7bt40" path="res://Escenas/armas/ametralladora.tscn" id="9_vb8xv"]
 [ext_resource type="Texture2D" uid="uid://duu04c2sil67" path="res://Escenas/sprites/Protagonista/Protagonista - Frame 2.png" id="10_keghf"]
 [ext_resource type="Texture2D" uid="uid://lfbb20e2q6x0" path="res://Escenas/sprites/Protagonista/Protagonista - Frame 3.png" id="11_yecun"]
->>>>>>> 53922c9ee6c69aa0a700546e137719b95ba5da54
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xa6pu"]
 size = Vector2(46, 48)
@@ -57,23 +53,22 @@ shape = SubResource("RectangleShape2D_pklf0")
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1790852728]
-zoom = Vector2(1.3, 1.3)
+zoom = Vector2(1.35, 1.35)
 limit_smoothed = true
 position_smoothing_enabled = true
-position_smoothing_speed = 3.5
+position_smoothing_speed = 4.0
 rotation_smoothing_enabled = true
-rotation_smoothing_speed = 3.5
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
+rotation_smoothing_speed = 4.0
 
 [node name="WeaponSocket" type="Node2D" parent="." unique_id=2081217580]
-position = Vector2(36, 0)
+position = Vector2(30, 15)
 script = ExtResource("6_6a8ci")
 armas = Array[PackedScene]([ExtResource("7_u45c2"), ExtResource("9_lq6sc"), ExtResource("9_vb8xv")])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1309471102]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=358820386]
+position = Vector2(-0.99999994, -0.99999994)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_81r0e")
 frame_progress = 0.62894076

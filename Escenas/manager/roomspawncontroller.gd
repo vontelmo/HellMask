@@ -8,7 +8,8 @@ var enemigos_en_escena = 0
 
 
 var rooms = [
-	"res://Escenas/Rooms/room_prueba.tscn"
+	"res://Escenas/Rooms/room_prueba.tscn",
+	"res://Escenas/Rooms/room_L_shape.tscn"
 	
 ]
 
