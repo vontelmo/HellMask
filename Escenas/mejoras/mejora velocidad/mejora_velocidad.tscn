@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://y4c67g0k1axe"]
+
+[ext_resource type="PackedScene" uid="uid://k88xqjuei6r0" path="res://Escenas/mejoras/mejora/mejora.tscn" id="1_uaqwu"]
+[ext_resource type="Script" uid="uid://jegcptluwg65" path="res://Escenas/mejoras/mejora velocidad/mejora_velocidad.gd" id="2_8y3tf"]
+
+[node name="Mejora" unique_id=112387519 instance=ExtResource("1_uaqwu")]
+script = ExtResource("2_8y3tf")
+speed_add = 60.0

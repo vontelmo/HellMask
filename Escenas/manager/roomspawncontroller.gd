@@ -1,15 +1,16 @@
-
 extends Node
 
 
 @export var door_scene: PackedScene = null
 var player_scene: PackedScene = preload("res://Escenas/personaje/Player.tscn")
 var player_instance: Node2D = null
+var enemigos_en_escena = 0
+
 
 var rooms = [
-	"res://Escenas/Rooms/room_1.tscn",
 	"res://Escenas/Rooms/room_prueba.tscn",
-	"res://Escenas/Rooms/room_cruz.tscn"
+	"res://Escenas/Rooms/room_L_shape.tscn"
+	
 ]
 
 var cerrar_barrera = true
@@ -177,6 +178,7 @@ func report_marker_parent(parent_node: Node) -> void:
 	print("Marker pertenece a:", parent_node.name)
 
 func on_player_entra_cuarto_nuevo(barrera_entrada: Node) -> void:
+	enemigos_en_escena = 1
 	print("Jugador entra a cuarto nuevo")
 	delete_previous_room()
 	await get_tree().process_frame
@@ -229,3 +231,12 @@ func reportar_posicion_spawnear_jugador(global_position_marker: Vector2) -> void
 	else:
 		push_error("El Player no es Node2D")
 		player_instance = null
+
+func update_enemigo_muerto():
+	enemigos_en_escena = enemigos_en_escena-1
+	print("quedan" , enemigos_en_escena, " enemigos")
+
+func update_enemigo_vivo():
+	enemigos_en_escena = enemigos_en_escena+1
+	print("quedan" , enemigos_en_escena, " enemigos")
+	

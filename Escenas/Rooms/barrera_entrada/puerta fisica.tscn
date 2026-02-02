@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://xu1qrsva6fst"]
+
+[ext_resource type="Script" path="res://Escenas/Rooms/barrera_entrada/puerta_fisica.gd" id="1_i38nk"]
+[ext_resource type="Texture2D" uid="uid://pc7m0pu2p4wp" path="res://Escenas/sprites/Fondo/pared_vertical_puerta.PNG" id="2_i38nk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i38nk"]
+size = Vector2(20, 195)
+
+[node name="PuertaFisica" type="StaticBody2D" unique_id=1968990186 groups=["obstacles"]]
+collision_mask = 5
+script = ExtResource("1_i38nk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=31972485]
+rotation = -1.5707964
+scale = Vector2(0.053209294, 0.05)
+texture = ExtResource("2_i38nk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2099826966]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_i38nk")

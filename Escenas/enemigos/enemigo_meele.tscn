@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bfql47tlfj0rg"]
 
 [ext_resource type="PackedScene" uid="uid://bhvhnfrmr4tta" path="res://Escenas/enemigos/enemigo.tscn" id="1_itg0s"]
+[ext_resource type="Texture2D" uid="uid://byjy0ngkh0mbu" path="res://Escenas/sprites/Enemigos/enemigo_rapido.PNG" id="2_jvp02"]
 
 [node name="EnemigoMelee" unique_id=1897216851 instance=ExtResource("1_itg0s")]
 range = 1.0

@@ -10,4 +10,3 @@ enemy_pool = Array[PackedScene]([ExtResource("2_ficpp")])
 enemy_count = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=853218325]
-texture = ExtResource("3_ficpp")
