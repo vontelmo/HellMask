@@ -3,8 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://bhvhnfrmr4tta" path="res://Escenas/enemigos/enemigo.tscn" id="1_itg0s"]
 [ext_resource type="Texture2D" uid="uid://byjy0ngkh0mbu" path="res://Escenas/sprites/Enemigos/enemigo_rapido.PNG" id="2_jvp02"]
 
-[node name="Enemigo" unique_id=1897216851 instance=ExtResource("1_itg0s")]
+[node name="EnemigoMelee" unique_id=1897216851 instance=ExtResource("1_itg0s")]
+range = 1.0
 
-[node name="Sprite2D" parent="." index="0" unique_id=395078675]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_jvp02")
+[node name="hitbox" parent="." index="2" unique_id=77615442]
+visible = true
+
+[node name="CollisionShape2D" parent="hitbox" index="0" unique_id=2055921416]
+visible = true

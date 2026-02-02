@@ -5,14 +5,13 @@ class_name Enemigo
 #var player: CharacterBody2D
 #@export var speed : int
 @export var health : int
-@export var weapon : PackedScene
+@export var weapon_tscn : PackedScene
 @export var damage : float
 @export var attack_speed : float
 @export var range : float
 
 var is_alive
-
-
+var weapon
 @export var speed := 120
 @onready var agent := $NavigationAgent2D
 @onready var player := get_tree().get_first_node_in_group("player")
@@ -20,18 +19,21 @@ var is_alive
 var last_target_pos: Vector2
 
 func _ready():
+	weapon = weapon_tscn.instantiate()
 	agent.radius = 20.0  # ejemplo
 	
 	agent.target_position = player.global_position
 	agent.avoidance_enabled = true
 	agent.max_neighbors = 10
 	agent.time_horizon = 1.0
+	add_child(weapon)
 	Roomspawncontroller.update_enemigo_vivo()
 
 func _process(delta: float) -> void:
 	if health == 0:
 		is_alive = false
 		_death()
+	attack()
 
 	
 func _physics_process(delta):
@@ -57,7 +59,7 @@ func attack():
 	if player.global_position.distance_to(last_target_pos) > range:
 		var dir = (player.global_position - global_position).normalized()
 		weapon.try_shoot(global_position, dir)
-		#print("disparo desde enemigo")
+		#print("meeleee desde enemigo")
 
 func _death():
 	if not is_alive:

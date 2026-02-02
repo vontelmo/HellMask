@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bvqysc8cejrcg"]
+
+[ext_resource type="Texture2D" uid="uid://darldw4pewy6d" path="res://Escenas/sprites/Enemigos/enemigo_distancia_bala.PNG" id="1_earkv"]
+[ext_resource type="Script" uid="uid://blfi4bp7aigvb" path="res://Escenas/enemigos/armas_enemigos/proyectil_enemigo.gd" id="1_xfxpr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xfxpr"]
+radius = 11.045361
+
+[node name="ProyectilEnemigo" type="Node2D" unique_id=1841169218]
+script = ExtResource("1_xfxpr")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=806578384]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1901046239]
+position = Vector2(4, 0)
+shape = SubResource("CircleShape2D_xfxpr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hurtbox" unique_id=483068136]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_earkv")

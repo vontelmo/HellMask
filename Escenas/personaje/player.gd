@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
+@export var escena_muerte: PackedScene
 @export var masks: Array[PackedScene] 
 var instanciated_masks: Array[Node]
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
@@ -9,12 +10,18 @@ var dash = false
 var _is_dashing = false
 var dash_dir
 var _velocidad = 300
+var is_alive = true
 @export var _health : float
 
 func _ready() -> void:
 	for mask in masks:
 		instanciated_masks.append(mask.instantiate())
 	instanciated_masks[1].enable_dash.connect(_activar_dash)
+	
+func _process(delta: float) -> void:
+	if _health == 0:
+		is_alive = false
+		_death()
 
 func _physics_process(delta: float) -> void:
 	# movimiento 
@@ -71,3 +78,17 @@ func dashear():
 func _on_timer_timeout() -> void:
 	_is_dashing = false
 	pass # Replace with function body.
+
+func _take_damage(damage):
+	print("me hacen dano:", damage)
+	_health -= damage
+	if _health <= 0:
+		_death()
+	
+func _death():
+	if not is_alive:
+		if is_inside_tree():
+			print("estoy morido")
+			get_tree().change_scene_to_packed(escena_muerte)
+			
+			

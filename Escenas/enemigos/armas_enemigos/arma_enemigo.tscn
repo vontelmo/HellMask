@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://bykedvcvfk6d4"]
 
-[node name="ArmaEnemigo" type="Node2D" unique_id=513710373]
+[ext_resource type="Script" uid="uid://7nmfw5ue71a4" path="res://Escenas/enemigos/armas_enemigos/arma_enemigo.gd" id="1_63jkc"]
+[ext_resource type="PackedScene" uid="uid://bvqysc8cejrcg" path="res://Escenas/enemigos/armas_enemigos/proyectil_enemigo.tscn" id="2_3tvbx"]
+
+[node name="ArmaEnemigo" type="Node2D" unique_id=109063432]
+script = ExtResource("1_63jkc")
+projectile_scene = ExtResource("2_3tvbx")
